@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dsi7gh1cot5u0"]
+
+[ext_resource type="Texture2D" uid="uid://nsx84m7jd3m1" path="res://assets/images/Goal/goal.png" id="1_jbojv"]
+[ext_resource type="Script" uid="uid://chpohohw8qmqr" path="res://scripts/goal.gd" id="1_sx1j4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sx1j4"]
+atlas = ExtResource("1_jbojv")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1gcmh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sx1j4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gcmh"]
+size = Vector2(13, 91)
+
+[node name="Goal" type="Area2D" unique_id=408673852]
+script = ExtResource("1_sx1j4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1476676647]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_1gcmh")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=912252932]
+position = Vector2(-12.5, 2.5)
+shape = SubResource("RectangleShape2D_1gcmh")
