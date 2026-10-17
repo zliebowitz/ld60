@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://nk1gpkhfot5s" path="res://assets/images/Tilemap/Ground.png" id="4_s8va5"]
 [ext_resource type="PackedScene" uid="uid://dj1mgc82agdsw" path="res://scenes/slug.tscn" id="4_x42e6"]
 [ext_resource type="PackedScene" uid="uid://dsi7gh1cot5u0" path="res://scenes/goal.tscn" id="7_oc4kc"]
+[ext_resource type="PackedScene" uid="uid://ityv0ihqnxo8" path="res://scenes/spikes.tscn" id="8_s8va5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dga24"]
 texture = ExtResource("2_sk5k4")
@@ -121,3 +122,11 @@ position = Vector2(977, 118)
 
 [node name="Goal" parent="." unique_id=408673852 instance=ExtResource("7_oc4kc")]
 position = Vector2(1211, 623)
+
+[node name="Hazards" type="Node2D" parent="." unique_id=203578375]
+
+[node name="Spikes" parent="Hazards" unique_id=1617340846 instance=ExtResource("8_s8va5")]
+position = Vector2(226, 644)
+
+[node name="Spikes2" parent="Hazards" unique_id=181961338 instance=ExtResource("8_s8va5")]
+position = Vector2(744, 603)
