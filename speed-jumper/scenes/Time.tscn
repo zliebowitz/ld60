@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://1ou5340jl2xb"]
+
+[ext_resource type="Script" uid="uid://2yw4mxnytyq8" path="res://scripts/time.gd" id="1_creh7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3bnw3"]
+font_size = 24
+
+[node name="Time" type="Control" unique_id=455369118]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_creh7")
+
+[node name="Label" type="Label" parent="." unique_id=888027070]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0 S"
+label_settings = SubResource("LabelSettings_3bnw3")
+horizontal_alignment = 2
