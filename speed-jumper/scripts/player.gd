@@ -39,9 +39,9 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-	if direction == 1.0:
+	if direction > 0.0:
 		animated_sprite_2d.flip_h = false;
-	elif direction == -1.0:
+	elif direction < 0.0:
 		animated_sprite_2d.flip_h = true;
 		
 		
