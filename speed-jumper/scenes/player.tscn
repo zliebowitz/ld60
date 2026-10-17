@@ -2,22 +2,34 @@
 
 [ext_resource type="Script" uid="uid://c74hv8q8skh2w" path="res://scripts/player.gd" id="1_dqkch"]
 [ext_resource type="Texture2D" uid="uid://ddbv8f4mdcqwc" path="res://assets/images/Player/Idle.png" id="2_qlg0r"]
-[ext_resource type="Texture2D" uid="uid://iyp1p0gregis" path="res://assets/images/Player/Jump.png" id="3_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://d0bhcsfss4p5f" path="res://assets/images/Player/Jump.png" id="3_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://bjhl1rpiuhm7s" path="res://assets/images/Player/Run.png" id="4_fjrip"]
 [ext_resource type="AudioStream" uid="uid://dujn1fhnjcd83" path="res://assets/sounds/jump.wav" id="5_qlg0r"]
 [ext_resource type="AudioStream" uid="uid://dw2gcu624tm66" path="res://assets/sounds/death.wav" id="6_tuyoq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
 atlas = ExtResource("2_qlg0r")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(0, 0, 128, 160)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
 atlas = ExtResource("3_tuyoq")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(0, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("4_fjrip")
+region = Rect2(128, 0, 128, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("4_fjrip")
+region = Rect2(256, 0, 128, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
+atlas = ExtResource("4_fjrip")
+region = Rect2(384, 0, 128, 160)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
 atlas = ExtResource("4_fjrip")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(0, 0, 128, 160)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1gcmh"]
 animations = [{
@@ -44,6 +56,15 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2wvv")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_smehm")
 }],
 "loop": 1,
@@ -52,20 +73,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1gcmh"]
-size = Vector2(11, 15)
+size = Vector2(102, 158)
 
 [node name="Player" type="CharacterBody2D" unique_id=811557842]
-scale = Vector2(3, 3)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_dqkch")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1862069678]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_1gcmh")
-animation = &"death"
+animation = &"run"
 autoplay = "idle"
+frame_progress = 0.4240592
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1533990918]
-position = Vector2(0.5, 0.50000024)
+position = Vector2(-8, -1)
 shape = SubResource("RectangleShape2D_1gcmh")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1010738496]
