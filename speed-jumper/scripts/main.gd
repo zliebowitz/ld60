@@ -12,13 +12,11 @@ func _process(delta: float) -> void:
 
 func _setup_level() -> void:
 	# Connect enemies
-	var enemies = $LevelRoot.get_node_or_null("Enemies")
-	if enemies:
-		for enemy in enemies.get_children():
-				enemy.player_died.connect(_on_player_died)
+	var player = $LevelRoot.get_node_or_null("Player")
+	if player:
+		player.died.connect(_on_player_died)
 				
 				
 # SIGNAL HANDLERS
-func _on_player_died(body):
-	body.die()
+func _on_player_died() -> void:
 	print("Player Died")

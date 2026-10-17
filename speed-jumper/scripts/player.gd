@@ -1,4 +1,7 @@
 extends CharacterBody2D
+
+signal died
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
 @onready var death_sound: AudioStreamPlayer2D = $DeathSound
@@ -8,6 +11,10 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -600.0
 var alive = true;
 
+
+func _ready() -> void:
+	died.connect(die)
+	
 
 func _physics_process(delta: float) -> void:
 	
@@ -49,3 +56,15 @@ func die() -> void:
 	animated_sprite_2d.animation = "death"
 	alive = false;
 	death_sound.play()
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body == self:
+		return
+	if body.is_in_group("enemy") and alive:
+		died.emit()
+
+
+func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	if area.is_in_group("enemy") and alive:
+		died.emit()

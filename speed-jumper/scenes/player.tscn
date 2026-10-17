@@ -86,12 +86,23 @@ animation = &"run"
 autoplay = "idle"
 frame_progress = 0.4240592
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1533990918]
-position = Vector2(-8, -1)
-shape = SubResource("RectangleShape2D_1gcmh")
-
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1010738496]
 stream = ExtResource("5_qlg0r")
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="." unique_id=242902891]
 stream = ExtResource("6_tuyoq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2139919219]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1533990918]
+position = Vector2(-8, -1)
+shape = SubResource("RectangleShape2D_1gcmh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2102086026]
+position = Vector2(-8, -1)
+shape = SubResource("RectangleShape2D_1gcmh")
+
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
