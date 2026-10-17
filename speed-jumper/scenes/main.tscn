@@ -9,11 +9,10 @@ script = ExtResource("1_0wfyh")
 
 [node name="LevelRoot" parent="." unique_id=738171494 instance=ExtResource("2_0wfyh")]
 
-[node name="HUD" type="Container" parent="." unique_id=1273783077]
-offset_left = 510.0
-offset_top = 89.0
-offset_right = 903.0
-offset_bottom = 121.0
+[node name="HUD" type="CanvasLayer" parent="." unique_id=851653694]
 
 [node name="Time" parent="HUD" unique_id=455369118 instance=ExtResource("3_sugp2")]
-layout_mode = 2
+offset_left = 510.0
+offset_top = 89.0
+offset_right = 510.0
+offset_bottom = 89.0
