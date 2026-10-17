@@ -5,6 +5,8 @@ signal stop
 
 @onready var label = $Label
 
+const format = "%.1f s"
+
 var time = 0
 var running = true
 
@@ -18,7 +20,7 @@ func _ready() -> void:
 func reset() -> void:
 	time = 0.0
 	running = true
-	label.text = "%6.2f s" % time
+	label.text = format % time
 
 func end():
 	running = false
@@ -27,5 +29,5 @@ func end():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	time += delta
-	label.text = "%6.2f s" % time
+	label.text = format % time
 	
