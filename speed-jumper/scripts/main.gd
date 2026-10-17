@@ -42,8 +42,9 @@ func _on_goal_body_entered(body: Node2D) -> void:
 		body.can_move = false
 		print("Goal")
 		call_deferred("_load_level",level)
-		
+
 
 func _on_player_died() -> void:
 	print("Player Died")
+	
 	call_deferred("_load_level",level)

@@ -14,7 +14,7 @@ var can_move = true
 
 
 func _ready() -> void:
-	died.connect(die)
+	pass
 	
 
 func _physics_process(delta: float) -> void:
@@ -60,13 +60,12 @@ func die() -> void:
 	death_sound.play()
 
 
-func _on_body_entered(body: Node2D) -> void:
-	if body == self:
-		return
-	if body.is_in_group("enemy") and alive:
-		died.emit()
-
-
-func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+func _on_hitbox_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	if area.is_in_group("enemy") and alive:
+		die()
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite_2d.animation == "death":
 		died.emit()
+		
