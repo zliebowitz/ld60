@@ -119,63 +119,63 @@ position = Vector2(1163, 530)
 
 [node name="Spikes" parent="Hazards" unique_id=1617340846 instance=ExtResource("8_3p04p")]
 position = Vector2(312, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes2" parent="Hazards" unique_id=132009761 instance=ExtResource("8_3p04p")]
 position = Vector2(360, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes3" parent="Hazards" unique_id=927812711 instance=ExtResource("8_3p04p")]
 position = Vector2(408.00003, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes4" parent="Hazards" unique_id=570075792 instance=ExtResource("8_3p04p")]
 position = Vector2(456, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes5" parent="Hazards" unique_id=1589303454 instance=ExtResource("8_3p04p")]
 position = Vector2(504, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes6" parent="Hazards" unique_id=2128140010 instance=ExtResource("8_3p04p")]
 position = Vector2(552, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes7" parent="Hazards" unique_id=1611839203 instance=ExtResource("8_3p04p")]
 position = Vector2(600, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes8" parent="Hazards" unique_id=514037390 instance=ExtResource("8_3p04p")]
 position = Vector2(648, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes9" parent="Hazards" unique_id=753076925 instance=ExtResource("8_3p04p")]
 position = Vector2(792, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes10" parent="Hazards" unique_id=1320147637 instance=ExtResource("8_3p04p")]
 position = Vector2(840, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes11" parent="Hazards" unique_id=1333017018 instance=ExtResource("8_3p04p")]
 position = Vector2(888, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes12" parent="Hazards" unique_id=1383498722 instance=ExtResource("8_3p04p")]
 position = Vector2(936, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes13" parent="Hazards" unique_id=171304759 instance=ExtResource("8_3p04p")]
 position = Vector2(984, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes14" parent="Hazards" unique_id=1720738683 instance=ExtResource("8_3p04p")]
 position = Vector2(1032, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes15" parent="Hazards" unique_id=1735392013 instance=ExtResource("8_3p04p")]
 position = Vector2(1080, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Powerups" type="Node2D" parent="." unique_id=1228885330]
 

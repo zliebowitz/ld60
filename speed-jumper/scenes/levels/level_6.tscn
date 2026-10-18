@@ -142,7 +142,7 @@ position = Vector2(1210, 612)
 
 [node name="Spikes" parent="Hazards" unique_id=1617340846 instance=ExtResource("8_lgrx1")]
 position = Vector2(216, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="SawPath" parent="." unique_id=1100441175 instance=ExtResource("9_fhpes")]
 position = Vector2(-82, 91)

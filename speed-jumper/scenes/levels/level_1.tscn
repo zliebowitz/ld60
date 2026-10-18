@@ -117,48 +117,48 @@ position = Vector2(1116, 146)
 
 [node name="Spikes" parent="Hazards" unique_id=1617340846 instance=ExtResource("8_s8va5")]
 position = Vector2(408, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes2" parent="Hazards" unique_id=1746711117 instance=ExtResource("8_s8va5")]
 position = Vector2(456, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes3" parent="Hazards" unique_id=1707517218 instance=ExtResource("8_s8va5")]
 position = Vector2(600, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes4" parent="Hazards" unique_id=1524905590 instance=ExtResource("8_s8va5")]
 position = Vector2(648, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes5" parent="Hazards" unique_id=120301597 instance=ExtResource("8_s8va5")]
 position = Vector2(792, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes6" parent="Hazards" unique_id=1627750513 instance=ExtResource("8_s8va5")]
 position = Vector2(840, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes7" parent="Hazards" unique_id=1778332935 instance=ExtResource("8_s8va5")]
 position = Vector2(984, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes8" parent="Hazards" unique_id=711803100 instance=ExtResource("8_s8va5")]
 position = Vector2(1032, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes9" parent="Hazards" unique_id=2041901189 instance=ExtResource("8_s8va5")]
 position = Vector2(1176, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes10" parent="Hazards" unique_id=1610404306 instance=ExtResource("8_s8va5")]
 position = Vector2(1224, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes11" parent="Hazards" unique_id=925557210 instance=ExtResource("8_s8va5")]
 position = Vector2(216, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Spikes12" parent="Hazards" unique_id=851981837 instance=ExtResource("8_s8va5")]
 position = Vector2(264, 648)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
