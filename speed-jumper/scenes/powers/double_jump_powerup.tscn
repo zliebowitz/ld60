@@ -32,3 +32,8 @@ shape = SubResource("CircleShape2D_eevyk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=730352713]
 sprite_frames = SubResource("SpriteFrames_1gcmh")
 autoplay = "default"
+
+[node name="Timer" type="Timer" parent="." unique_id=1711032803]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
