@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d0yq3wtivrsi2"]
+
+[ext_resource type="Script" uid="uid://bsi1bjvyb8egb" path="res://title_screen.gd" id="1_fgkus"]
+
+[node name="title_screen" type="Control" unique_id=1746330626]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fgkus")
+
+[node name="start_button" type="Button" parent="." unique_id=1376387119]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 283.0
+offset_right = 818.0
+offset_bottom = 395.0
+text = "Start"
+
+[connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
