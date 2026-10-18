@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dj1mgc82agdsw" path="res://scenes/slug.tscn" id="4_x42e6"]
 [ext_resource type="PackedScene" uid="uid://dsi7gh1cot5u0" path="res://scenes/goal.tscn" id="7_oc4kc"]
 [ext_resource type="PackedScene" uid="uid://ityv0ihqnxo8" path="res://scenes/spikes.tscn" id="8_s8va5"]
+[ext_resource type="PackedScene" uid="uid://j432xia6yudj" path="res://scenes/saw_path.tscn" id="9_dga24"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dga24"]
 texture = ExtResource("2_sk5k4")
@@ -90,6 +91,18 @@ sources/0 = SubResource("TileSetAtlasSource_dga24")
 sources/1 = SubResource("TileSetAtlasSource_qxy0u")
 sources/2 = SubResource("TileSetAtlasSource_excbq")
 
+[sub_resource type="Curve2D" id="Curve2D_dga24"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 924, 262, 0, 0, 0, 0, 830, 511)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_qxy0u"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 947, 302, 0, 0, 0, 0, 953, 475)
+}
+point_count = 2
+
 [node name="LevelRoot" type="Node2D" unique_id=738171494]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2000160133]
@@ -128,5 +141,10 @@ position = Vector2(1211, 623)
 [node name="Spikes" parent="Hazards" unique_id=1617340846 instance=ExtResource("8_s8va5")]
 position = Vector2(226, 644)
 
-[node name="Spikes2" parent="Hazards" unique_id=181961338 instance=ExtResource("8_s8va5")]
-position = Vector2(744, 603)
+[node name="SawPath" parent="." unique_id=1100441175 instance=ExtResource("9_dga24")]
+position = Vector2(-82, 91)
+curve = SubResource("Curve2D_dga24")
+
+[node name="SawPath2" parent="." unique_id=1700692768 instance=ExtResource("9_dga24")]
+position = Vector2(127, 174)
+curve = SubResource("Curve2D_qxy0u")

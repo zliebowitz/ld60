@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cl24fj0ishp54" path="res://scenes/player.tscn" id="5_nt80m"]
 [ext_resource type="PackedScene" uid="uid://dj1mgc82agdsw" path="res://scenes/slug.tscn" id="6_brxtv"]
 [ext_resource type="PackedScene" uid="uid://dsi7gh1cot5u0" path="res://scenes/goal.tscn" id="7_tv7cl"]
+[ext_resource type="PackedScene" uid="uid://ityv0ihqnxo8" path="res://scenes/spikes.tscn" id="8_3p04p"]
+[ext_resource type="PackedScene" uid="uid://j432xia6yudj" path="res://scenes/saw_path.tscn" id="9_qsp8v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dga24"]
 texture = ExtResource("2_8qukl")
@@ -89,6 +91,12 @@ sources/0 = SubResource("TileSetAtlasSource_dga24")
 sources/1 = SubResource("TileSetAtlasSource_qxy0u")
 sources/2 = SubResource("TileSetAtlasSource_excbq")
 
+[sub_resource type="Curve2D" id="Curve2D_3p04p"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 860, 304, 0, 0, 0, 0, 654, 303)
+}
+point_count = 2
+
 [node name="LevelRoot" type="Node2D" unique_id=738171494]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2000160133]
@@ -110,14 +118,20 @@ position = Vector2(119, 626)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=810611094]
 
-[node name="Slug" parent="Enemies" unique_id=435138375 instance=ExtResource("6_brxtv")]
-position = Vector2(385, 650)
-
 [node name="Slug2" parent="Enemies" unique_id=2019551669 instance=ExtResource("6_brxtv")]
 position = Vector2(999, 647)
 
-[node name="Slug3" parent="Enemies" unique_id=902586452 instance=ExtResource("6_brxtv")]
-position = Vector2(691, 648)
-
 [node name="Goal" parent="." unique_id=408673852 instance=ExtResource("7_tv7cl")]
 position = Vector2(1211, 623)
+
+[node name="Hazards" type="Node2D" parent="." unique_id=1184922573]
+
+[node name="Spikes" parent="Hazards" unique_id=1617340846 instance=ExtResource("8_3p04p")]
+position = Vector2(226, 644)
+
+[node name="Spikes2" parent="Hazards" unique_id=1717962459 instance=ExtResource("8_3p04p")]
+position = Vector2(403, 648)
+
+[node name="SawPath" parent="." unique_id=1100441175 instance=ExtResource("9_qsp8v")]
+position = Vector2(-192, 330)
+curve = SubResource("Curve2D_3p04p")

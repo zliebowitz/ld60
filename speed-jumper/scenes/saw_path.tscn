@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://j432xia6yudj"]
+
+[ext_resource type="Script" uid="uid://djdmglj5ay4vp" path="res://scripts/saw_path.gd" id="1_bv3kb"]
+[ext_resource type="Script" uid="uid://dyferiw6wm0f" path="res://scripts/saw_follow.gd" id="1_r153v"]
+[ext_resource type="Texture2D" uid="uid://gt1uv2r807xh" path="res://assets/images/Hazards/Saw.png" id="2_bv3kb"]
+
+[sub_resource type="Curve2D" id="Curve2D_xn7gu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 947, 302, 0, 0, 0, 0, 789, 300)
+}
+point_count = 2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1gcmh"]
+radius = 14.472196
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr2r5"]
+atlas = ExtResource("2_bv3kb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etkl4"]
+atlas = ExtResource("2_bv3kb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1gcmh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr2r5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etkl4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SawPath" type="Path2D" unique_id=1100441175]
+curve = SubResource("Curve2D_xn7gu")
+script = ExtResource("1_bv3kb")
+
+[node name="SawFollow" type="PathFollow2D" parent="." unique_id=601929188]
+position = Vector2(947, 302)
+rotates = false
+script = ExtResource("1_r153v")
+
+[node name="Saw" type="Area2D" parent="SawFollow" unique_id=944978350 groups=["enemy"]]
+scale = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SawFollow/Saw" unique_id=1273519102]
+shape = SubResource("CircleShape2D_1gcmh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SawFollow/Saw" unique_id=124768984]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_1gcmh")
+autoplay = "default"
+frame_progress = 0.97515935

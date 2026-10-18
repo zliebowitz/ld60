@@ -18,6 +18,7 @@ func _process(delta: float) -> void:
 func _load_level(level_number: int) -> void:
 	if current_level_root:
 		current_level_root.queue_free()
+	
 	var level_path = "res://scenes/levels/level_%s.tscn" % level_number
 	current_level_root = load(level_path).instantiate()
 	add_child(current_level_root)
