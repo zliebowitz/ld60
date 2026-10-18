@@ -19,7 +19,6 @@ var can_move = true
 
 var dash_timer = 0.0        
 var dash_cooldown = 0.0      
-var air_dash_available = false  
 
 
 func _ready() -> void:
@@ -34,13 +33,13 @@ func _physics_process(delta: float) -> void:
 	dash_cooldown = maxf(dash_cooldown - delta, 0.0)
 
 	# DASH: start a dash
-	if can_move and Input.is_action_just_pressed("dash") and dash_cooldown <= 0.0 and air_dash_available:
+	if can_move and Input.is_action_just_pressed("dash") and dash_cooldown <= 0.0 and GameState.power == Power.Type.DASH:
 		var held := Input.get_axis("left", "right")
 		if held != 0.0:
 			animated_sprite_2d.flip_h = held < 0.0
 		dash_timer = DASH_TIME
 		dash_cooldown = DASH_COOLDOWN
-		air_dash_available = false
+		GameState.consume_power()
 
 	# DASH: while dashing, fixed speed, no gravity, no other control
 	if dash_timer > 0.0:
@@ -93,6 +92,7 @@ func _physics_process(delta: float) -> void:
 		
 		
 func die() -> void:
+	GameState.register_death()
 	animated_sprite_2d.animation = "death"
 	alive = false;
 	death_sound.play()

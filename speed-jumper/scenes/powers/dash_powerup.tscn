@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b5t8kw7pjejmv"]
+
+[ext_resource type="Script" uid="uid://brita3vgf0wie" path="res://scripts/powerup.gd" id="1_myq3e"]
+[ext_resource type="Texture2D" uid="uid://bcmt0135ih2fm" path="res://assets/images/Powerups/dash_powerup.png" id="1_vr8aj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eevyk"]
+radius = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myq3e"]
+atlas = ExtResource("1_vr8aj")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1gcmh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myq3e")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="DashPowerup" type="Area2D" unique_id=1526352414]
+script = ExtResource("1_myq3e")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=736865822]
+shape = SubResource("CircleShape2D_eevyk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=730352713]
+sprite_frames = SubResource("SpriteFrames_1gcmh")
+autoplay = "default"

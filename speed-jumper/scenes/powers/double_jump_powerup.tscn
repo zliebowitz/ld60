@@ -1,28 +1,29 @@
-[gd_scene format=3 uid="uid://b5t8kw7pjejmv"]
+[gd_scene format=3 uid="uid://bok32f413dc5m"]
 
-[ext_resource type="Script" uid="uid://brita3vgf0wie" path="res://scripts/dash_powerup.gd" id="1_myq3e"]
-[ext_resource type="Texture2D" uid="uid://bcmt0135ih2fm" path="res://assets/images/Powerups/dash_powerup.png" id="1_vr8aj"]
+[ext_resource type="Script" uid="uid://brita3vgf0wie" path="res://scripts/powerup.gd" id="1_84gvr"]
+[ext_resource type="Texture2D" uid="uid://cqoiu5kds8whj" path="res://assets/images/Powerups/double_jump_powerup.png" id="2_mldri"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eevyk"]
 radius = 7.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_myq3e"]
-atlas = ExtResource("1_vr8aj")
+[sub_resource type="AtlasTexture" id="AtlasTexture_604x7"]
+atlas = ExtResource("2_mldri")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1gcmh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_myq3e")
+"texture": SubResource("AtlasTexture_604x7")
 }],
 "loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="DashPowerup" type="Area2D" unique_id=1526352414]
-script = ExtResource("1_myq3e")
+[node name="DoubleJumpPowerup" type="Area2D" unique_id=1526352414]
+script = ExtResource("1_84gvr")
+type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=736865822]
 shape = SubResource("CircleShape2D_eevyk")
