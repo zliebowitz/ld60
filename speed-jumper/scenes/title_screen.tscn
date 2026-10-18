@@ -6,8 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://r6n3igy4aqj4" path="res://assets/images/Tilemap/Background2.png" id="4_3yumr"]
 [ext_resource type="Texture2D" uid="uid://nk1gpkhfot5s" path="res://assets/images/Tilemap/Ground.png" id="5_cs5ya"]
 [ext_resource type="Texture2D" uid="uid://xewsvcjbohfk" path="res://assets/images/Player/Run.png" id="6_e54dn"]
+[ext_resource type="Theme" uid="uid://b2uuxlsp2gyj" path="res://assets/themes/new_theme.tres" id="6_tklts"]
 [ext_resource type="Script" uid="uid://d3inyalxddeqv" path="res://scenes/animated_sprite_2d.gd" id="7_3yumr"]
+[ext_resource type="Texture2D" uid="uid://ltiptblfi34r" path="res://assets/images/Title/ButtonStart.png" id="7_u26n3"]
 [ext_resource type="Texture2D" uid="uid://cp4aakqosimf3" path="res://assets/images/Title/JUMPMAN.png" id="8_cs5ya"]
+[ext_resource type="Texture2D" uid="uid://b1w62o83qbd1o" path="res://assets/images/Title/ButtonStartPressed.png" id="8_u26n3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e54dn"]
 texture = ExtResource("2_dc4i4")
@@ -85,6 +88,15 @@ texture = ExtResource("5_cs5ya")
 [sub_resource type="TileSet" id="TileSet_tyani"]
 sources/0 = SubResource("TileSetAtlasSource_ib7db")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vkxjq"]
+texture = ExtResource("7_u26n3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ib7db"]
+texture = ExtResource("8_u26n3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_frs5l"]
+texture = ExtResource("7_u26n3")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_3yumr"]
 atlas = ExtResource("6_e54dn")
 region = Rect2(0, 0, 32, 40)
@@ -152,11 +164,14 @@ tile_set = SubResource("TileSet_tyani")
 
 [node name="start_button" type="Button" parent="." unique_id=1376387119]
 layout_mode = 0
-offset_left = 472.0
+offset_left = 463.0
 offset_top = 299.0
-offset_right = 818.0
-offset_bottom = 411.0
-text = "Start"
+offset_right = 819.0
+offset_bottom = 433.0
+theme = ExtResource("6_tklts")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vkxjq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ib7db")
+theme_override_styles/hover = SubResource("StyleBoxTexture_frs5l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=856037948]
 position = Vector2(642, 489)
@@ -166,7 +181,7 @@ frame_progress = 0.13795525
 script = ExtResource("7_3yumr")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1352168682]
-position = Vector2(659, 198)
+position = Vector2(639, 198)
 scale = Vector2(2, 2)
 texture = ExtResource("8_cs5ya")
 
