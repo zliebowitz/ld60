@@ -106,7 +106,7 @@ tile_map_data = PackedByteArray("AAAAAA4AAgAHAAEAAAABAA4AAgAGAAEAAAACAA4AAgAGAAE
 tile_set = SubResource("TileSet_3bnw3")
 
 [node name="Player" parent="." unique_id=811557842 instance=ExtResource("2_6iamk")]
-position = Vector2(108, 631)
+position = Vector2(108, 632)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=810611094]
 
@@ -116,37 +116,49 @@ position = Vector2(1116, 146)
 [node name="Hazards" type="Node2D" parent="." unique_id=203578375]
 
 [node name="Spikes" parent="Hazards" unique_id=1617340846 instance=ExtResource("8_s8va5")]
-position = Vector2(409, 649)
+position = Vector2(408, 648)
+scale = Vector2(1.5, 1.5)
 
 [node name="Spikes2" parent="Hazards" unique_id=1746711117 instance=ExtResource("8_s8va5")]
-position = Vector2(455.00003, 648)
+position = Vector2(456, 648)
+scale = Vector2(1.5, 1.5)
 
 [node name="Spikes3" parent="Hazards" unique_id=1707517218 instance=ExtResource("8_s8va5")]
-position = Vector2(599, 648)
+position = Vector2(600, 648)
+scale = Vector2(1.5, 1.5)
 
 [node name="Spikes4" parent="Hazards" unique_id=1524905590 instance=ExtResource("8_s8va5")]
-position = Vector2(647, 647)
+position = Vector2(648, 648)
+scale = Vector2(1.5, 1.5)
 
 [node name="Spikes5" parent="Hazards" unique_id=120301597 instance=ExtResource("8_s8va5")]
-position = Vector2(792, 647)
+position = Vector2(792, 648)
+scale = Vector2(1.5, 1.5)
 
 [node name="Spikes6" parent="Hazards" unique_id=1627750513 instance=ExtResource("8_s8va5")]
-position = Vector2(840, 646)
+position = Vector2(840, 648)
+scale = Vector2(1.5, 1.5)
 
 [node name="Spikes7" parent="Hazards" unique_id=1778332935 instance=ExtResource("8_s8va5")]
-position = Vector2(985, 650)
+position = Vector2(984, 648)
+scale = Vector2(1.5, 1.5)
 
 [node name="Spikes8" parent="Hazards" unique_id=711803100 instance=ExtResource("8_s8va5")]
-position = Vector2(1033, 649)
+position = Vector2(1032, 648)
+scale = Vector2(1.5, 1.5)
 
 [node name="Spikes9" parent="Hazards" unique_id=2041901189 instance=ExtResource("8_s8va5")]
-position = Vector2(1180, 644)
+position = Vector2(1176, 648)
+scale = Vector2(1.5, 1.5)
 
 [node name="Spikes10" parent="Hazards" unique_id=1610404306 instance=ExtResource("8_s8va5")]
-position = Vector2(1228, 643)
+position = Vector2(1224, 648)
+scale = Vector2(1.5, 1.5)
 
 [node name="Spikes11" parent="Hazards" unique_id=925557210 instance=ExtResource("8_s8va5")]
-position = Vector2(219, 652)
+position = Vector2(216, 648)
+scale = Vector2(1.5, 1.5)
 
 [node name="Spikes12" parent="Hazards" unique_id=851981837 instance=ExtResource("8_s8va5")]
-position = Vector2(267, 651)
+position = Vector2(264, 648)
+scale = Vector2(1.5, 1.5)

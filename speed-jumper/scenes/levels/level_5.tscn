@@ -98,6 +98,7 @@ _data = {
 point_count = 2
 
 [node name="LevelRoot" type="Node2D" unique_id=738171494]
+texture_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2000160133]
 texture_filter = 1
@@ -127,10 +128,12 @@ position = Vector2(1211, 623)
 [node name="Hazards" type="Node2D" parent="." unique_id=1184922573]
 
 [node name="Spikes" parent="Hazards" unique_id=1617340846 instance=ExtResource("8_3p04p")]
-position = Vector2(226, 644)
+position = Vector2(226, 648)
+scale = Vector2(1.5, 1.5)
 
 [node name="Spikes2" parent="Hazards" unique_id=1717962459 instance=ExtResource("8_3p04p")]
 position = Vector2(403, 648)
+scale = Vector2(1.5, 1.5)
 
 [node name="SawPath" parent="." unique_id=1100441175 instance=ExtResource("9_qsp8v")]
 position = Vector2(-192, 330)
