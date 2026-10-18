@@ -44,15 +44,22 @@ func _setup_level(level_root: Node) -> void:
 	var goal = level_root.get_node_or_null("Goal")
 	if goal:
 		goal.body_entered.connect(_on_goal_body_entered)
+		goal.goal_complete.connect(_on_goal_complete)
 				
 				
 # SIGNAL HANDLERS
 func _on_goal_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		level += 1
 		body.can_move = false
 		print("Goal")
-		call_deferred("_load_level",level)
+		var goal = current_level_root.get_node_or_null("Goal")
+		goal.goal_reached()
+		
+		
+
+func _on_goal_complete() -> void:
+	level += 1
+	call_deferred("_load_level",level)
 
 
 func _on_player_died() -> void:
