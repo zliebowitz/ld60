@@ -22,6 +22,7 @@ animations = [{
 }]
 
 [node name="DashPowerup" type="Area2D" unique_id=1526352414]
+scale = Vector2(3, 3)
 script = ExtResource("1_myq3e")
 type = 2
 

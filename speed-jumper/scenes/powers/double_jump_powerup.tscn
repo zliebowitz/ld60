@@ -22,6 +22,7 @@ animations = [{
 }]
 
 [node name="DoubleJumpPowerup" type="Area2D" unique_id=1526352414]
+scale = Vector2(3, 3)
 script = ExtResource("1_84gvr")
 type = 1
 
