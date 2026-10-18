@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://brita3vgf0wie" path="res://scripts/powerup.gd" id="1_myq3e"]
 [ext_resource type="Texture2D" uid="uid://bcmt0135ih2fm" path="res://assets/images/Powerups/dash_powerup.png" id="1_vr8aj"]
+[ext_resource type="AudioStream" uid="uid://titws53gbyjm" path="res://assets/sounds/powerup.wav" id="3_5ufhj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eevyk"]
 radius = 7.0
@@ -35,5 +36,9 @@ autoplay = "default"
 
 [node name="Timer" type="Timer" parent="." unique_id=1501989455]
 one_shot = true
+
+[node name="PowerupSound" type="AudioStreamPlayer2D" parent="." unique_id=1196099425]
+scale = Vector2(0.33333334, 0.33333334)
+stream = ExtResource("3_5ufhj")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
