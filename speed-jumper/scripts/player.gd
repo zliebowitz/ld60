@@ -6,6 +6,7 @@ signal died
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
 @onready var death_sound: AudioStreamPlayer2D = $DeathSound
 @onready var landing_sound: AudioStreamPlayer2D = $LandingSound
+@onready var dash_double_jump_sound: AudioStreamPlayer2D = $DashDoubleJumpSound
 
 
 const SPEED = 300.0
@@ -37,6 +38,7 @@ func _physics_process(delta: float) -> void:
 		var held := Input.get_axis("left", "right")
 		if held != 0.0:
 			animated_sprite_2d.flip_h = held < 0.0
+		dash_double_jump_sound.play()
 		dash_timer = DASH_TIME
 		dash_cooldown = DASH_COOLDOWN
 		GameState.consume_power()
@@ -74,6 +76,7 @@ func _physics_process(delta: float) -> void:
 				velocity.y = JUMP_VELOCITY
 				jump_sound.play()
 			elif GameState.power == Power.Type.DOUBLE_JUMP:
+				dash_double_jump_sound.play()
 				velocity.y = JUMP_VELOCITY
 				jump_sound.play()
 				GameState.consume_power()

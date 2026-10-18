@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://xewsvcjbohfk" path="res://assets/images/Player/Run.png" id="4_fjrip"]
 [ext_resource type="AudioStream" uid="uid://cq81i8xsf3jj3" path="res://assets/sounds/landing.wav" id="7_fjrip"]
 [ext_resource type="AudioStream" uid="uid://cfeyeux50lcwl" path="res://assets/sounds/jump.wav" id="7_ur7pv"]
+[ext_resource type="AudioStream" uid="uid://b56dppqof0234" path="res://assets/sounds/dash_double_jump.wav" id="8_d2wvv"]
 [ext_resource type="AudioStream" uid="uid://617v4naaepmn" path="res://assets/sounds/death.wav" id="8_y4r1p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8ls1"]
@@ -124,7 +125,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"death",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -170,14 +171,19 @@ script = ExtResource("1_dqkch")
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_1gcmh")
-animation = &"idle"
+animation = &"death"
 autoplay = "idle"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2102086026]
 shape = SubResource("RectangleShape2D_1gcmh")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1010738496]
 stream = ExtResource("7_ur7pv")
+
+[node name="DashDoubleJumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1319892338]
+stream = ExtResource("8_d2wvv")
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="." unique_id=242902891]
 stream = ExtResource("8_y4r1p")
