@@ -69,9 +69,14 @@ func _physics_process(delta: float) -> void:
 
 	if can_move:
 		# Handle jump.
-		if Input.is_action_just_pressed("jump") and is_on_floor():
-			velocity.y = JUMP_VELOCITY
-			jump_sound.play()
+		if Input.is_action_just_pressed("jump"):
+			if is_on_floor():
+				velocity.y = JUMP_VELOCITY
+				jump_sound.play()
+			elif GameState.power == Power.Type.DOUBLE_JUMP:
+				velocity.y = JUMP_VELOCITY
+				jump_sound.play()
+				GameState.consume_power()
 
 		# Get the input direction and handle the movement/deceleration.
 		var direction := Input.get_axis("left", "right")

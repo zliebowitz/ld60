@@ -1,18 +1,14 @@
-[gd_scene format=4 uid="uid://b83o80of7kww7"]
+[gd_scene format=4 uid="uid://cj5224oxhy030"]
 
-[ext_resource type="Texture2D" uid="uid://db0a7eth6u05c" path="res://assets/images/Tilemap/Background0_2.png" id="1_2bnyt"]
-[ext_resource type="Texture2D" uid="uid://brgrlevuyp4vl" path="res://assets/images/Tilemap/Background1.png" id="2_n6eey"]
-[ext_resource type="Texture2D" uid="uid://r6n3igy4aqj4" path="res://assets/images/Tilemap/Background2.png" id="3_qi5uv"]
-[ext_resource type="Texture2D" uid="uid://nk1gpkhfot5s" path="res://assets/images/Tilemap/Ground.png" id="4_f6egh"]
-[ext_resource type="PackedScene" uid="uid://cl24fj0ishp54" path="res://scenes/player.tscn" id="5_t4txi"]
-[ext_resource type="PackedScene" uid="uid://dj1mgc82agdsw" path="res://scenes/slug.tscn" id="6_apo5x"]
-[ext_resource type="PackedScene" uid="uid://dsi7gh1cot5u0" path="res://scenes/goal.tscn" id="7_josfm"]
-[ext_resource type="PackedScene" uid="uid://ityv0ihqnxo8" path="res://scenes/spikes.tscn" id="8_lgrx1"]
-[ext_resource type="PackedScene" uid="uid://j432xia6yudj" path="res://scenes/saw_path.tscn" id="9_fhpes"]
-[ext_resource type="PackedScene" uid="uid://b5t8kw7pjejmv" path="res://scenes/powers/dash_powerup.tscn" id="10_vmg1d"]
+[ext_resource type="Texture2D" uid="uid://db0a7eth6u05c" path="res://assets/images/Tilemap/Background0_2.png" id="1_ftfob"]
+[ext_resource type="Texture2D" uid="uid://brgrlevuyp4vl" path="res://assets/images/Tilemap/Background1.png" id="2_fkk1g"]
+[ext_resource type="Texture2D" uid="uid://r6n3igy4aqj4" path="res://assets/images/Tilemap/Background2.png" id="3_ugcn1"]
+[ext_resource type="Texture2D" uid="uid://nk1gpkhfot5s" path="res://assets/images/Tilemap/Ground.png" id="4_pimnq"]
+[ext_resource type="PackedScene" uid="uid://cl24fj0ishp54" path="res://scenes/player.tscn" id="5_2bnyt"]
+[ext_resource type="PackedScene" uid="uid://dsi7gh1cot5u0" path="res://scenes/goal.tscn" id="6_n6eey"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dga24"]
-texture = ExtResource("2_n6eey")
+texture = ExtResource("2_fkk1g")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -31,7 +27,7 @@ texture = ExtResource("2_n6eey")
 7:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxy0u"]
-texture = ExtResource("3_qi5uv")
+texture = ExtResource("3_ugcn1")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -50,7 +46,7 @@ texture = ExtResource("3_qi5uv")
 7:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_excbq"]
-texture = ExtResource("4_f6egh")
+texture = ExtResource("4_pimnq")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -92,18 +88,6 @@ sources/0 = SubResource("TileSetAtlasSource_dga24")
 sources/1 = SubResource("TileSetAtlasSource_qxy0u")
 sources/2 = SubResource("TileSetAtlasSource_excbq")
 
-[sub_resource type="Curve2D" id="Curve2D_dga24"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 924, 262, 0, 0, 0, 0, 830, 511)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_qxy0u"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 947, 302, 0, 0, 0, 0, 953, 475)
-}
-point_count = 2
-
 [node name="LevelRoot" type="Node2D" unique_id=738171494]
 texture_filter = 1
 
@@ -111,46 +95,22 @@ texture_filter = 1
 texture_filter = 1
 offset_right = 1295.0
 offset_bottom = 720.0
-texture = ExtResource("1_2bnyt")
+texture = ExtResource("1_ftfob")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1030501912]
 texture_filter = 1
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAAAAA4AAgAHAAEAAAABAA4AAgAHAAEAAAACAA4AAgAHAAEAAAADAA4AAgAHAAEAAAAEAA4AAgAGAAEAAAAFAA4AAgAGAAEAAAAGAA4AAgAGAAEAAAAHAA4AAgAGAAEAAAAIAA4AAgAGAAEAAAAJAA4AAgAGAAEAAAAKAA4AAgAGAAEAAAALAA4AAgAGAAEAAAAMAA4AAgAGAAEAAAANAA4AAgAGAAEAAAAOAA4AAgAGAAEAAAAPAA4AAgAHAAEAAAAQAA4AAgAGAAEAAAARAA4AAgAGAAEAAAASAA4AAgAGAAEAAAATAA4AAgAGAAEAAAAUAA4AAgAGAAEAAAAVAA4AAgAGAAEAAAAWAA4AAgAGAAEAAAAXAA4AAgAGAAEAAAAYAA4AAgAGAAEAAAAZAA4AAgAGAAEAAAAaAA4AAgAHAAEAAAAaAA0AAgAHAAAAAAAaAAwAAgAHAAAAAAAaAAsAAgAHAAAAAAAaAAoAAgAHAAAAAAAaAAkAAgAHAAAAAAAaAAgAAgAHAAAAAAAaAAcAAgAHAAAAAAAaAAYAAgAHAAEAAAAaAAUAAgAHAAEAAAAaAAIAAgAHAAAAAAAaAAEAAgAHAAAAAAAaAAAAAgAHAAEAAAAZAAAAAgADAAEAAAAYAAAAAgADAAEAAAAXAAAAAgADAAEAAAAWAAAAAgADAAEAAAAVAAAAAgADAAEAAAAUAAAAAgADAAEAAAATAAAAAgADAAEAAAASAAAAAgADAAEAAAARAAAAAgADAAEAAAAQAAAAAgADAAEAAAAPAAAAAgADAAEAAAAOAAAAAgADAAEAAAANAAAAAgADAAEAAAAMAAAAAgADAAEAAAALAAAAAgADAAEAAAAKAAAAAgADAAEAAAAJAAAAAgADAAEAAAAIAAAAAgADAAEAAAAHAAAAAgADAAEAAAAGAAAAAgADAAEAAAAFAAAAAgADAAEAAAAEAAAAAgADAAEAAAADAAAAAgADAAEAAAACAAAAAgADAAEAAAABAAAAAgADAAEAAAAAAAAAAgAHAAEAAAAAAAEAAgAFAAEAAAAAAAIAAgAFAAEAAAAAAAMAAgAFAAEAAAAAAAQAAgAHAAEAAAAAAAUAAgAFAAEAAAAAAAYAAgAFAAEAAAAAAAcAAgAFAAEAAAAAAAgAAgAFAAEAAAAAAAkAAgAFAAEAAAAAAAoAAgAFAAEAAAAAAAsAAgAHAAEAAAAAAAwAAgAHAAEAAAAAAA0AAgAHAAEAAAABAAwAAgAHAAEAAAABAA0AAgAHAAEAAAACAAwAAgAHAAEAAAACAA0AAgAHAAEAAAADAAwAAgAFAAEAAAADAA0AAgAFAAEAAAABAAsAAgAGAAEAAAACAAsAAgAGAAEAAAADAAsAAgAEAAEAAAAWAAUAAgAGAAEAAAAXAAUAAgAGAAEAAAAYAAUAAgAGAAEAAAAZAAUAAgAGAAEAAAAWAAYAAgADAAEAAAAXAAYAAgADAAEAAAAYAAYAAgADAAEAAAAZAAYAAgADAAEAAAAPAA0AAgAEAAAAAAAVAAUAAgAGAAAAAAAVAAYAAgADAAAAAAAJAAkAAgACAAAAAAAKAAkAAgAAAAEAAAAHAAgAAgAAAAAAAAARAAsAAgAAAAAAAAAOAAoAAgAAAAAAAAANAAgAAgAAAAAAAAAPAAMAAgACAAAAAAAQAAMAAgACAAEAAAARAAMAAgACAAEAAAASAAMAAgACAAEAAAATAAMAAgACAAEAAAAUAAMAAgAAAAEAAAALAAQAAgACAAAAAAAMAAQAAgAAAAEAAAAaAAMAAgAHAAAAAAAaAAQAAgAHAAAAAAAIAAQAAgAAAAAAAAAEAAcAAgAAAAAAAAABAAQAAgAAAAAAAAACAAUAAgAAAAAAAAAFAAQAAgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAA4AAgAHAAEAAAABAA4AAgAGAAEAAAACAA4AAgAGAAEAAAADAA4AAgAGAAEAAAAEAA4AAgAGAAEAAAAFAA4AAgAGAAEAAAAGAA4AAgAGAAEAAAAHAA4AAgAGAAEAAAAIAA4AAgAGAAEAAAAJAA4AAgAGAAEAAAAKAA4AAgAGAAEAAAALAA4AAgAGAAEAAAAMAA4AAgAGAAEAAAANAA4AAgAGAAEAAAAOAA4AAgAGAAEAAAAPAA4AAgAGAAEAAAAQAA4AAgAGAAEAAAARAA4AAgAGAAEAAAASAA4AAgAGAAEAAAATAA4AAgAGAAEAAAAUAA4AAgAGAAEAAAAVAA4AAgAGAAEAAAAWAA4AAgAGAAEAAAAXAA4AAgAGAAEAAAAYAA4AAgAGAAEAAAAZAA4AAgAGAAEAAAAaAA4AAgAHAAEAAAAaAA0AAgAHAAAAAAAaAAwAAgAHAAAAAAAaAAsAAgAHAAAAAAAaAAoAAgAHAAAAAAAaAAkAAgAHAAAAAAAaAAgAAgAHAAAAAAAaAAcAAgAHAAAAAAAaAAYAAgAHAAAAAAAaAAUAAgAHAAAAAAAaAAIAAgAHAAAAAAAaAAEAAgAHAAAAAAAaAAAAAgAHAAEAAAAZAAAAAgADAAEAAAAYAAAAAgADAAEAAAAXAAAAAgADAAEAAAAWAAAAAgADAAEAAAAVAAAAAgADAAEAAAAUAAAAAgADAAEAAAATAAAAAgADAAEAAAASAAAAAgADAAEAAAARAAAAAgADAAEAAAAQAAAAAgADAAEAAAAPAAAAAgADAAEAAAAOAAAAAgADAAEAAAANAAAAAgADAAEAAAAMAAAAAgADAAEAAAALAAAAAgADAAEAAAAKAAAAAgADAAEAAAAJAAAAAgADAAEAAAAIAAAAAgADAAEAAAAHAAAAAgADAAEAAAAGAAAAAgADAAEAAAAFAAAAAgADAAEAAAAEAAAAAgADAAEAAAADAAAAAgADAAEAAAACAAAAAgADAAEAAAABAAAAAgADAAEAAAAAAAAAAgAHAAEAAAAAAAEAAgAFAAEAAAAAAAIAAgAFAAEAAAAAAAMAAgAFAAEAAAAAAAQAAgAFAAEAAAAAAAUAAgAFAAEAAAAAAAYAAgAFAAEAAAAAAAcAAgAFAAEAAAAAAAgAAgAFAAEAAAAAAAkAAgAFAAEAAAAAAAoAAgAFAAEAAAAAAAsAAgAFAAEAAAAAAAwAAgAFAAEAAAAAAA0AAgAFAAEAAAAaAAMAAgAHAAAAAAAaAAQAAgAHAAAAAAA=")
 tile_set = SubResource("TileSet_3bnw3")
 
-[node name="Player" parent="." unique_id=811557842 instance=ExtResource("5_t4txi")]
-position = Vector2(131, 419)
+[node name="Player" parent="." unique_id=811557842 instance=ExtResource("5_2bnyt")]
+position = Vector2(108, 631)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=810611094]
 
-[node name="Slug" parent="Enemies" unique_id=435138375 instance=ExtResource("6_apo5x")]
-position = Vector2(467, 648)
-
-[node name="Slug2" parent="Enemies" unique_id=2019551669 instance=ExtResource("6_apo5x")]
-position = Vector2(999, 647)
-
-[node name="Slug3" parent="Enemies" unique_id=902586452 instance=ExtResource("6_apo5x")]
-position = Vector2(977, 118)
-
-[node name="Goal" parent="." unique_id=408673852 instance=ExtResource("7_josfm")]
+[node name="Goal" parent="." unique_id=408673852 instance=ExtResource("6_n6eey")]
 position = Vector2(1210, 612)
 
 [node name="Hazards" type="Node2D" parent="." unique_id=203578375]
-
-[node name="Spikes" parent="Hazards" unique_id=1617340846 instance=ExtResource("8_lgrx1")]
-position = Vector2(216, 648)
-scale = Vector2(1.5, 1.5)
-
-[node name="SawPath" parent="." unique_id=1100441175 instance=ExtResource("9_fhpes")]
-position = Vector2(-82, 91)
-curve = SubResource("Curve2D_dga24")
-
-[node name="SawPath2" parent="." unique_id=1700692768 instance=ExtResource("9_fhpes")]
-position = Vector2(127, 174)
-curve = SubResource("Curve2D_qxy0u")
-
-[node name="DashPowerup" parent="." unique_id=1526352414 instance=ExtResource("10_vmg1d")]
-position = Vector2(272, 485)

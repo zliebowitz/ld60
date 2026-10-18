@@ -40,7 +40,8 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-stretch_mode = 2
+expand_mode = 3
+stretch_mode = 3
 
 [node name="PowerLabel" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer" unique_id=2080412233]
 unique_name_in_owner = true
