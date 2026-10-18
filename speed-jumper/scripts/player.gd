@@ -18,7 +18,7 @@ var can_move = true
 
 var dash_timer = 0.0        
 var dash_cooldown = 0.0      
-var air_dash_available = true  
+var air_dash_available = false  
 
 
 func _ready() -> void:
@@ -30,21 +30,16 @@ func _physics_process(delta: float) -> void:
 	if !alive:
 		return
 	
-	# DASH: refill the air dash on the ground, tick the cooldown
-	if is_on_floor():
-		air_dash_available = true
 	dash_cooldown = maxf(dash_cooldown - delta, 0.0)
 
 	# DASH: start a dash
-	if can_move and Input.is_action_just_pressed("dash") and dash_cooldown <= 0.0 \
-			and (is_on_floor() or air_dash_available):
+	if can_move and Input.is_action_just_pressed("dash") and dash_cooldown <= 0.0 and air_dash_available:
 		var held := Input.get_axis("left", "right")
 		if held != 0.0:
 			animated_sprite_2d.flip_h = held < 0.0
 		dash_timer = DASH_TIME
 		dash_cooldown = DASH_COOLDOWN
-		if not is_on_floor():
-			air_dash_available = false
+		air_dash_available = false
 
 	# DASH: while dashing, fixed speed, no gravity, no other control
 	if dash_timer > 0.0:

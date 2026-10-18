@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dsi7gh1cot5u0" path="res://scenes/goal.tscn" id="7_oc4kc"]
 [ext_resource type="PackedScene" uid="uid://ityv0ihqnxo8" path="res://scenes/spikes.tscn" id="8_s8va5"]
 [ext_resource type="PackedScene" uid="uid://j432xia6yudj" path="res://scenes/saw_path.tscn" id="9_dga24"]
+[ext_resource type="PackedScene" uid="uid://b5t8kw7pjejmv" path="res://scenes/dash_powerup.tscn" id="10_qxy0u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dga24"]
 texture = ExtResource("2_sk5k4")
@@ -148,3 +149,6 @@ curve = SubResource("Curve2D_dga24")
 [node name="SawPath2" parent="." unique_id=1700692768 instance=ExtResource("9_dga24")]
 position = Vector2(127, 174)
 curve = SubResource("Curve2D_qxy0u")
+
+[node name="DashPowerup" parent="." unique_id=1526352414 instance=ExtResource("10_qxy0u")]
+position = Vector2(272, 485)
