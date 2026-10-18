@@ -78,7 +78,13 @@ func _physics_process(delta: float) -> void:
 				jump_sound.play()
 				GameState.consume_power()
 
+		# Handle Suicide
+		if Input.is_action_just_pressed("suicide"):
+			die()
+			return
+
 		# Get the input direction and handle the movement/deceleration.
+		
 		var direction := Input.get_axis("left", "right")
 		if direction:
 			velocity.x = direction * SPEED
