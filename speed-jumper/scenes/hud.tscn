@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ccyp5vukjmp7p" path="res://scripts/hud.gd" id="1_ahhtf"]
 [ext_resource type="Texture2D" uid="uid://bcmt0135ih2fm" path="res://assets/images/Powerups/dash_powerup.png" id="2_oo0fn"]
-[ext_resource type="Texture2D" uid="uid://cqoiu5kds8whj" path="res://assets/images/Powerups/double_jump_powerup.png" id="3_5ysmq"]
+[ext_resource type="Texture2D" uid="uid://iwnkwxb42oly" path="res://assets/images/Powerups/double_jump_powerup.png" id="3_5ysmq"]
 
 [node name="HUD" type="CanvasLayer" unique_id=919402436]
 script = ExtResource("1_ahhtf")

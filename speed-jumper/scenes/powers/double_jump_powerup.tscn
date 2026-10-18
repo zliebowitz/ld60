@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bok32f413dc5m"]
 
 [ext_resource type="Script" uid="uid://brita3vgf0wie" path="res://scripts/powerup.gd" id="1_84gvr"]
-[ext_resource type="Texture2D" uid="uid://cqoiu5kds8whj" path="res://assets/images/Powerups/double_jump_powerup.png" id="2_mldri"]
+[ext_resource type="Texture2D" uid="uid://iwnkwxb42oly" path="res://assets/images/Powerups/double_jump_powerup.png" id="2_mldri"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eevyk"]
 radius = 7.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_604x7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_84gvr"]
 atlas = ExtResource("2_mldri")
 region = Rect2(0, 0, 16, 16)
 
@@ -14,7 +14,7 @@ region = Rect2(0, 0, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_604x7")
+"texture": SubResource("AtlasTexture_84gvr")
 }],
 "loop": 1,
 "name": &"default",
