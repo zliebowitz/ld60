@@ -9,8 +9,16 @@ signal died
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -600.0
+const DASH_SPEED = 900.0    
+const DASH_TIME = 0.15       
+const DASH_COOLDOWN = 0.4   
+ 
 var alive = true
 var can_move = true
+
+var dash_timer = 0.0        
+var dash_cooldown = 0.0      
+var air_dash_available = true  
 
 
 func _ready() -> void:
@@ -20,6 +28,37 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	
 	if !alive:
+		return
+	
+	# DASH: refill the air dash on the ground, tick the cooldown
+	if is_on_floor():
+		air_dash_available = true
+	dash_cooldown = maxf(dash_cooldown - delta, 0.0)
+
+	# DASH: start a dash
+	if can_move and Input.is_action_just_pressed("dash") and dash_cooldown <= 0.0 \
+			and (is_on_floor() or air_dash_available):
+		var held := Input.get_axis("left", "right")
+		if held != 0.0:
+			animated_sprite_2d.flip_h = held < 0.0
+		dash_timer = DASH_TIME
+		dash_cooldown = DASH_COOLDOWN
+		if not is_on_floor():
+			air_dash_available = false
+
+	# DASH: while dashing, fixed speed, no gravity, no other control
+	if dash_timer > 0.0:
+		dash_timer -= delta
+		var facing := -1.0 if animated_sprite_2d.flip_h else 1.0
+		velocity.x = facing * DASH_SPEED
+		velocity.y = 0.0
+		if animated_sprite_2d.sprite_frames.has_animation("dash"):
+			animated_sprite_2d.animation = "dash"
+		else:
+			animated_sprite_2d.animation = "run"
+		move_and_slide()
+		if dash_timer <= 0.0:
+			velocity.x = clampf(velocity.x, -SPEED, SPEED)
 		return
 	
 	# Add animation
@@ -60,12 +99,11 @@ func die() -> void:
 	death_sound.play()
 
 
-func _on_hitbox_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	if area.is_in_group("enemy") and alive:
+func _on_hitbox_area_shape_entered(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
+	if _area.is_in_group("enemy") and alive:
 		die()
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite_2d.animation == "death":
 		died.emit()
-		

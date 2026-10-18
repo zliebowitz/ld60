@@ -1,7 +1,6 @@
 extends Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-signal player_died
 const SPEED = 100.0
 var direction = -1.0
 
@@ -9,11 +8,9 @@ var direction = -1.0
 func _ready() -> void:
 	animated_sprite_2d.flip_h = (direction == -1)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position.x += direction * SPEED * delta
-
 
 func _on_timer_timeout() -> void:
 	direction *= -1
