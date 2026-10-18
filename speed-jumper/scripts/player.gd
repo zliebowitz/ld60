@@ -5,6 +5,7 @@ signal died
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
 @onready var death_sound: AudioStreamPlayer2D = $DeathSound
+@onready var landing_sound: AudioStreamPlayer2D = $LandingSound
 
 
 const SPEED = 300.0
@@ -80,8 +81,11 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
+		var was_airborne := not is_on_floor()
 		move_and_slide()
-		
+		if was_airborne and is_on_floor():
+			landing_sound.play();
+			
 		if direction > 0.0:
 			animated_sprite_2d.flip_h = false;
 		elif direction < 0.0:
