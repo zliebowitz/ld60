@@ -2,6 +2,7 @@ extends Node2D
 
 var level = 1
 var current_level_root: Node = null
+var restarting = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,7 +12,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if not restarting and Input.is_action_just_pressed("restart"):
+		var player = current_level_root.get_node_or_null("Player")
+		if player:
+			restarting = true
+			player.can_move = false
+			call_deferred("_load_level",1)
+		
 
 
 # LEVEL MANAGEMENT
@@ -24,6 +31,9 @@ func _load_level(level_number: int) -> void:
 	add_child(current_level_root)
 	current_level_root.name = "LevelRoot"
 	_setup_level(current_level_root)
+	if restarting:
+		GameState.reset_run()
+		restarting = false
 
 func _setup_level(level_root: Node) -> void:
 	# Connect enemies
