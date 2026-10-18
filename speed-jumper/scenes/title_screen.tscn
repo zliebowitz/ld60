@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://brgrlevuyp4vl" path="res://assets/images/Tilemap/Background1.png" id="3_e54dn"]
 [ext_resource type="Texture2D" uid="uid://r6n3igy4aqj4" path="res://assets/images/Tilemap/Background2.png" id="4_3yumr"]
 [ext_resource type="Texture2D" uid="uid://nk1gpkhfot5s" path="res://assets/images/Tilemap/Ground.png" id="5_cs5ya"]
+[ext_resource type="Texture2D" uid="uid://xewsvcjbohfk" path="res://assets/images/Player/Run.png" id="6_e54dn"]
+[ext_resource type="Script" uid="uid://d3inyalxddeqv" path="res://scenes/animated_sprite_2d.gd" id="7_3yumr"]
+[ext_resource type="Texture2D" uid="uid://cp4aakqosimf3" path="res://assets/images/Title/JUMPMAN.png" id="8_cs5ya"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e54dn"]
 texture = ExtResource("2_dc4i4")
@@ -82,6 +85,42 @@ texture = ExtResource("5_cs5ya")
 [sub_resource type="TileSet" id="TileSet_tyani"]
 sources/0 = SubResource("TileSetAtlasSource_ib7db")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yumr"]
+atlas = ExtResource("6_e54dn")
+region = Rect2(0, 0, 32, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs5ya"]
+atlas = ExtResource("6_e54dn")
+region = Rect2(32, 0, 32, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mykxm"]
+atlas = ExtResource("6_e54dn")
+region = Rect2(64, 0, 32, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tklts"]
+atlas = ExtResource("6_e54dn")
+region = Rect2(96, 0, 32, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ctw05"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yumr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs5ya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mykxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tklts")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="title_screen" type="Control" unique_id=1746330626]
 texture_filter = 1
 layout_mode = 3
@@ -114,9 +153,21 @@ tile_set = SubResource("TileSet_tyani")
 [node name="start_button" type="Button" parent="." unique_id=1376387119]
 layout_mode = 0
 offset_left = 472.0
-offset_top = 283.0
+offset_top = 299.0
 offset_right = 818.0
-offset_bottom = 395.0
+offset_bottom = 411.0
 text = "Start"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=856037948]
+position = Vector2(642, 489)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ctw05")
+frame_progress = 0.13795525
+script = ExtResource("7_3yumr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1352168682]
+position = Vector2(659, 198)
+scale = Vector2(2, 2)
+texture = ExtResource("8_cs5ya")
 
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
