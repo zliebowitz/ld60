@@ -1,11 +1,13 @@
-[gd_scene format=4 uid="uid://hejsnivcfxt6"]
+[gd_scene format=4 uid="uid://d4nlhri3sos7i"]
 
 [ext_resource type="Texture2D" uid="uid://db0a7eth6u05c" path="res://assets/images/Tilemap/Background0_2.png" id="1_hq5i0"]
+[ext_resource type="PackedScene" uid="uid://bok32f413dc5m" path="res://scenes/powers/double_jump_powerup.tscn" id="2_7yavk"]
 [ext_resource type="Texture2D" uid="uid://brgrlevuyp4vl" path="res://assets/images/Tilemap/Background1.png" id="2_u1w5x"]
 [ext_resource type="Texture2D" uid="uid://r6n3igy4aqj4" path="res://assets/images/Tilemap/Background2.png" id="3_posk4"]
 [ext_resource type="Texture2D" uid="uid://nk1gpkhfot5s" path="res://assets/images/Tilemap/Ground.png" id="4_sjq8i"]
 [ext_resource type="PackedScene" uid="uid://cl24fj0ishp54" path="res://scenes/player.tscn" id="5_q0wsq"]
-[ext_resource type="PackedScene" uid="uid://suspjdfi40eo" path="res://scenes/victory_screen.tscn" id="6_hq5i0"]
+[ext_resource type="PackedScene" uid="uid://dsi7gh1cot5u0" path="res://scenes/goal.tscn" id="6_2j1nx"]
+[ext_resource type="PackedScene" uid="uid://j432xia6yudj" path="res://scenes/saw_path.tscn" id="7_wr6ej"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dga24"]
 texture = ExtResource("2_u1w5x")
@@ -88,6 +90,48 @@ sources/0 = SubResource("TileSetAtlasSource_dga24")
 sources/1 = SubResource("TileSetAtlasSource_qxy0u")
 sources/2 = SubResource("TileSetAtlasSource_excbq")
 
+[sub_resource type="Curve2D" id="Curve2D_7yavk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 924, 262, 0, 0, 0, 0, 922, 786)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_hfkb1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 924, 262, 0, 0, 0, 0, 922, 786)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_vi0f2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 924, 262, 0, 0, 0, 0, 922, 488)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_2ayqo"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 924, 262, 0, 0, 0, 0, 921, -258)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_hd4w6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 924, 262, 0, 0, 0, 0, 922, 40)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_x7cri"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 924, 262, 0, 0, 0, 0, 538, 264)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_5muy6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 924, 262, 0, 0, 0, 0, 921, -258)
+}
+point_count = 2
+
 [node name="LevelRoot" type="Node2D" unique_id=738171494]
 texture_filter = 1
 
@@ -99,17 +143,70 @@ texture = ExtResource("1_hq5i0")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="DoubleJumpPowerup5" parent="TextureRect" unique_id=1526352414 instance=ExtResource("2_7yavk")]
+position = Vector2(159, 500)
+
+[node name="DoubleJumpPowerup6" parent="TextureRect" unique_id=980485447 instance=ExtResource("2_7yavk")]
+position = Vector2(79, 342)
+
+[node name="DoubleJumpPowerup7" parent="TextureRect" unique_id=449490731 instance=ExtResource("2_7yavk")]
+position = Vector2(159, 239)
+
+[node name="DoubleJumpPowerup8" parent="TextureRect" unique_id=507838561 instance=ExtResource("2_7yavk")]
+position = Vector2(159, 153.00002)
+
+[node name="DoubleJumpPowerup9" parent="TextureRect" unique_id=1255571230 instance=ExtResource("2_7yavk")]
+position = Vector2(543, 500)
+
+[node name="DoubleJumpPowerup10" parent="TextureRect" unique_id=228680935 instance=ExtResource("2_7yavk")]
+position = Vector2(463, 342)
+
+[node name="DoubleJumpPowerup11" parent="TextureRect" unique_id=536429844 instance=ExtResource("2_7yavk")]
+position = Vector2(543, 239)
+
+[node name="DoubleJumpPowerup12" parent="TextureRect" unique_id=1538222881 instance=ExtResource("2_7yavk")]
+position = Vector2(543, 153.00002)
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1030501912]
 texture_filter = 1
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAAAAA4AAgAHAAEAAAABAA4AAgAGAAEAAAACAA4AAgAGAAEAAAADAA4AAgAGAAEAAAAEAA4AAgAGAAEAAAAFAA4AAgAGAAEAAAAGAA4AAgAGAAEAAAAHAA4AAgAGAAEAAAAIAA4AAgAGAAEAAAAJAA4AAgAGAAEAAAAKAA4AAgAGAAEAAAALAA4AAgAGAAEAAAAMAA4AAgAGAAEAAAANAA4AAgAGAAEAAAAOAA4AAgAGAAEAAAAPAA4AAgAGAAEAAAAQAA4AAgAGAAEAAAARAA4AAgAGAAEAAAASAA4AAgAGAAEAAAATAA4AAgAGAAEAAAAUAA4AAgAGAAEAAAAVAA4AAgAGAAEAAAAWAA4AAgAGAAEAAAAXAA4AAgAGAAEAAAAYAA4AAgAGAAEAAAAZAA4AAgAGAAEAAAAaAA4AAgAHAAEAAAAaAA0AAgAHAAAAAAAaAAwAAgAHAAAAAAAaAAsAAgAHAAAAAAAaAAoAAgAHAAAAAAAaAAkAAgAHAAAAAAAaAAgAAgAHAAAAAAAaAAcAAgAHAAAAAAAaAAYAAgAHAAAAAAAaAAUAAgAHAAAAAAAaAAIAAgAHAAAAAAAaAAEAAgAHAAAAAAAaAAAAAgAHAAEAAAAZAAAAAgADAAEAAAAYAAAAAgADAAEAAAAXAAAAAgADAAEAAAAWAAAAAgADAAEAAAAVAAAAAgADAAEAAAAUAAAAAgADAAEAAAATAAAAAgADAAEAAAASAAAAAgADAAEAAAARAAAAAgADAAEAAAAQAAAAAgADAAEAAAAPAAAAAgADAAEAAAAOAAAAAgADAAEAAAANAAAAAgADAAEAAAAMAAAAAgADAAEAAAALAAAAAgADAAEAAAAKAAAAAgADAAEAAAAJAAAAAgADAAEAAAAIAAAAAgADAAEAAAAHAAAAAgADAAEAAAAGAAAAAgADAAEAAAAFAAAAAgADAAEAAAAEAAAAAgADAAEAAAADAAAAAgADAAEAAAACAAAAAgADAAEAAAABAAAAAgADAAEAAAAAAAAAAgAHAAEAAAAAAAEAAgAFAAEAAAAAAAIAAgAFAAEAAAAAAAMAAgAFAAEAAAAAAAQAAgAFAAEAAAAAAAUAAgAFAAEAAAAAAAYAAgAFAAEAAAAAAAcAAgAFAAEAAAAAAAgAAgAFAAEAAAAAAAkAAgAFAAEAAAAAAAoAAgAFAAEAAAAAAAsAAgAFAAEAAAAAAAwAAgAFAAEAAAAAAA0AAgAFAAEAAAAaAAMAAgAHAAAAAAAaAAQAAgAHAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAA4AAgAHAAEAAAABAA4AAgAGAAEAAAACAA4AAgAGAAEAAAADAA4AAgAGAAEAAAAEAA4AAgAHAAEAAAAFAA4AAgAGAAEAAAAGAA4AAgAGAAEAAAAHAA4AAgAGAAEAAAAIAA4AAgAGAAEAAAAJAA4AAgAGAAEAAAAKAA4AAgAGAAEAAAALAA4AAgAGAAEAAAAMAA4AAgAHAAEAAAANAA4AAgAGAAEAAAAOAA4AAgAGAAEAAAAPAA4AAgAGAAEAAAAQAA4AAgAGAAEAAAARAA4AAgAGAAEAAAASAA4AAgAGAAEAAAATAA4AAgAGAAEAAAAUAA4AAgAGAAEAAAAVAA4AAgAGAAEAAAAWAA4AAgAGAAEAAAAXAA4AAgAGAAEAAAAYAA4AAgAGAAEAAAAZAA4AAgAGAAEAAAAaAA4AAgAHAAEAAAAaAA0AAgAHAAAAAAAaAAwAAgAHAAAAAAAaAAsAAgAHAAAAAAAaAAoAAgAHAAAAAAAaAAkAAgAHAAAAAAAaAAgAAgAHAAAAAAAaAAcAAgAHAAAAAAAaAAYAAgAHAAEAAAAaAAUAAgAHAAAAAAAaAAIAAgAHAAAAAAAaAAEAAgAHAAAAAAAaAAAAAgAHAAEAAAAZAAAAAgADAAEAAAAYAAAAAgADAAEAAAAXAAAAAgADAAEAAAAWAAAAAgADAAEAAAAVAAAAAgADAAEAAAAUAAAAAgADAAEAAAATAAAAAgADAAEAAAASAAAAAgADAAEAAAARAAAAAgADAAEAAAAQAAAAAgADAAEAAAAPAAAAAgADAAEAAAAOAAAAAgADAAEAAAANAAAAAgADAAEAAAAMAAAAAgADAAEAAAALAAAAAgADAAEAAAAKAAAAAgADAAEAAAAJAAAAAgADAAEAAAAIAAAAAgAHAAEAAAAHAAAAAgADAAEAAAAGAAAAAgADAAEAAAAFAAAAAgADAAEAAAAEAAAAAgADAAEAAAADAAAAAgADAAEAAAACAAAAAgADAAEAAAABAAAAAgADAAEAAAAAAAAAAgAHAAEAAAAAAAEAAgAFAAEAAAAAAAIAAgAFAAEAAAAAAAMAAgAFAAEAAAAAAAQAAgAFAAEAAAAAAAUAAgAFAAEAAAAAAAYAAgAFAAEAAAAAAAcAAgAFAAEAAAAAAAgAAgAFAAEAAAAAAAkAAgAFAAEAAAAAAAoAAgAFAAEAAAAAAAsAAgAFAAEAAAAAAAwAAgAFAAEAAAAAAA0AAgAFAAEAAAAaAAMAAgAHAAAAAAAaAAQAAgAHAAAAAAAEAAMAAgAEAAAAAAAEAAQAAgAFAAAAAAAEAAUAAgAFAAAAAAAEAAYAAgAFAAAAAAAEAAcAAgAFAAAAAAAEAAgAAgAFAAAAAAAEAAkAAgAFAAAAAAAEAAoAAgAFAAAAAAAEAAsAAgAFAAAAAAAEAAwAAgAFAAAAAAAEAA0AAgAFAAAAAAAIAAsAAgABAAAAAAAIAAoAAgAFAAAAAAAIAAkAAgAFAAAAAAAIAAgAAgAFAAAAAAAIAAcAAgAFAAAAAAAIAAYAAgAFAAAAAAAIAAUAAgAFAAAAAAAIAAQAAgAFAAAAAAAIAAMAAgAFAAAAAAAIAAIAAgAFAAAAAAAIAAEAAgAFAAAAAAAMAAMAAgAGAAAAAAAMAAQAAgAFAAAAAAAMAAUAAgAFAAAAAAAMAAYAAgAFAAAAAAAMAAcAAgAFAAAAAAAMAAgAAgAFAAAAAAAMAAkAAgAHAAAAAAAMAAoAAgAFAAAAAAAMAAsAAgAFAAAAAAAMAAwAAgAFAAAAAAAMAA0AAgAFAAAAAAANAAMAAgACAAEAAAAOAAMAAgACAAEAAAAPAAMAAgACAAEAAAAQAAMAAgACAAEAAAARAAMAAgACAAEAAAASAAMAAgACAAEAAAATAAMAAgACAAEAAAAUAAMAAgACAAEAAAAVAAMAAgAAAAEAAAAZAAYAAgACAAEAAAAYAAYAAgACAAEAAAAXAAYAAgACAAEAAAAWAAYAAgACAAEAAAAVAAYAAgACAAEAAAAUAAYAAgACAAEAAAATAAYAAgACAAEAAAASAAYAAgACAAEAAAARAAYAAgACAAAAAAAVAAkAAgAAAAEAAAAUAAkAAgACAAEAAAATAAkAAgACAAEAAAASAAkAAgACAAEAAAARAAkAAgACAAEAAAAQAAkAAgACAAEAAAAPAAkAAgACAAEAAAAOAAkAAgACAAEAAAANAAkAAgACAAEAAAA=")
 tile_set = SubResource("TileSet_3bnw3")
 
 [node name="Player" parent="." unique_id=811557842 instance=ExtResource("5_q0wsq")]
-position = Vector2(108, 631)
+position = Vector2(150, 621)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=810611094]
 
+[node name="Goal" parent="." unique_id=408673852 instance=ExtResource("6_2j1nx")]
+position = Vector2(691, 610)
+
 [node name="Hazards" type="Node2D" parent="." unique_id=203578375]
 
-[node name="VictoryScreen" parent="." unique_id=482974796 instance=ExtResource("6_hq5i0")]
+[node name="SawPath3" parent="." unique_id=1100441175 instance=ExtResource("7_wr6ej")]
+position = Vector2(-706, -115)
+curve = SubResource("Curve2D_7yavk")
+
+[node name="SawPath6" parent="." unique_id=1139345268 instance=ExtResource("7_wr6ej")]
+position = Vector2(-321, -115)
+curve = SubResource("Curve2D_hfkb1")
+
+[node name="SawPath7" parent="." unique_id=1590985940 instance=ExtResource("7_wr6ej")]
+position = Vector2(-93, 192)
+curve = SubResource("Curve2D_vi0f2")
+
+[node name="SawPath4" parent="." unique_id=1977937381 instance=ExtResource("7_wr6ej")]
+position = Vector2(-880, 405)
+curve = SubResource("Curve2D_2ayqo")
+
+[node name="SawPath8" parent="." unique_id=1482419826 instance=ExtResource("7_wr6ej")]
+position = Vector2(70, 414)
+curve = SubResource("Curve2D_hd4w6")
+
+[node name="SawPath9" parent="." unique_id=440511310 instance=ExtResource("7_wr6ej")]
+position = Vector2(300, 47)
+curve = SubResource("Curve2D_x7cri")
+
+[node name="SawPath5" parent="." unique_id=1840811376 instance=ExtResource("7_wr6ej")]
+position = Vector2(-514, 405)
+curve = SubResource("Curve2D_5muy6")
