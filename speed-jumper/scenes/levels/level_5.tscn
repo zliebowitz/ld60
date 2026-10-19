@@ -93,9 +93,15 @@ sources/2 = SubResource("TileSetAtlasSource_excbq")
 
 [sub_resource type="Curve2D" id="Curve2D_3p04p"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 860, 304, 0, 0, 0, 0, 654, 303)
+"points": PackedVector2Array(0, 0, 0, 0, 860, 304, 0, 0, 0, 0, 643, 305)
 }
 point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_vvoq0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 860, 304, 0, 0, 0, 0, 643, 305, 0, 0, 0, 0, 631, 182, 0, 0, 0, 0, 855, 175, 0, 0, 0, 0, 860, 304)
+}
+point_count = 5
 
 [node name="LevelRoot" type="Node2D" unique_id=738171494]
 texture_filter = 1
@@ -143,3 +149,8 @@ curve = SubResource("Curve2D_3p04p")
 position = Vector2(-196, 162)
 curve = SubResource("Curve2D_3p04p")
 saw_speed = 120.0
+
+[node name="SawPath3" parent="." unique_id=1437921816 instance=ExtResource("9_qsp8v")]
+position = Vector2(-171, -19)
+curve = SubResource("Curve2D_vvoq0")
+saw_speed = 240.0
