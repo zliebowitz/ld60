@@ -111,7 +111,7 @@ position = Vector2(108, 632)
 [node name="Enemies" type="Node2D" parent="." unique_id=810611094]
 
 [node name="Goal" parent="." unique_id=408673852 instance=ExtResource("7_oc4kc")]
-position = Vector2(1116, 146)
+position = Vector2(1112, 130)
 
 [node name="Hazards" type="Node2D" parent="." unique_id=203578375]
 

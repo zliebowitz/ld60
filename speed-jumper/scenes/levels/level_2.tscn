@@ -113,7 +113,7 @@ position = Vector2(108, 631)
 [node name="Enemies" type="Node2D" parent="." unique_id=810611094]
 
 [node name="Goal" parent="." unique_id=408673852 instance=ExtResource("7_tv7cl")]
-position = Vector2(1163, 530)
+position = Vector2(1163, 515)
 
 [node name="Hazards" type="Node2D" parent="." unique_id=203578375]
 
