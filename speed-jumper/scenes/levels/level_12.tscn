@@ -1,11 +1,14 @@
-[gd_scene format=4 uid="uid://hejsnivcfxt6"]
+[gd_scene format=4 uid="uid://bkb0tf66mr871"]
 
 [ext_resource type="Texture2D" uid="uid://db0a7eth6u05c" path="res://assets/images/Tilemap/Background0_2.png" id="1_hq5i0"]
 [ext_resource type="Texture2D" uid="uid://brgrlevuyp4vl" path="res://assets/images/Tilemap/Background1.png" id="2_u1w5x"]
+[ext_resource type="PackedScene" uid="uid://bok32f413dc5m" path="res://scenes/powers/double_jump_powerup.tscn" id="2_yd7i6"]
 [ext_resource type="Texture2D" uid="uid://r6n3igy4aqj4" path="res://assets/images/Tilemap/Background2.png" id="3_posk4"]
 [ext_resource type="Texture2D" uid="uid://nk1gpkhfot5s" path="res://assets/images/Tilemap/Ground.png" id="4_sjq8i"]
 [ext_resource type="PackedScene" uid="uid://cl24fj0ishp54" path="res://scenes/player.tscn" id="5_q0wsq"]
-[ext_resource type="PackedScene" uid="uid://suspjdfi40eo" path="res://scenes/victory_screen.tscn" id="6_hq5i0"]
+[ext_resource type="PackedScene" uid="uid://dsi7gh1cot5u0" path="res://scenes/goal.tscn" id="6_2ii7u"]
+[ext_resource type="PackedScene" uid="uid://ityv0ihqnxo8" path="res://scenes/spikes.tscn" id="7_aj8n2"]
+[ext_resource type="PackedScene" uid="uid://b5t8kw7pjejmv" path="res://scenes/powers/dash_powerup.tscn" id="8_yd7i6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dga24"]
 texture = ExtResource("2_u1w5x")
@@ -99,17 +102,146 @@ texture = ExtResource("1_hq5i0")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="DoubleJumpPowerup3" parent="." unique_id=1526352414 instance=ExtResource("2_yd7i6")]
+position = Vector2(1153, 552)
+
+[node name="DoubleJumpPowerup4" parent="." unique_id=1212461719 instance=ExtResource("2_yd7i6")]
+position = Vector2(1153, 410)
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1030501912]
 texture_filter = 1
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAAAAA4AAgAHAAEAAAABAA4AAgAGAAEAAAACAA4AAgAGAAEAAAADAA4AAgAGAAEAAAAEAA4AAgAGAAEAAAAFAA4AAgAGAAEAAAAGAA4AAgAGAAEAAAAHAA4AAgAGAAEAAAAIAA4AAgAGAAEAAAAJAA4AAgAGAAEAAAAKAA4AAgAGAAEAAAALAA4AAgAGAAEAAAAMAA4AAgAGAAEAAAANAA4AAgAGAAEAAAAOAA4AAgAGAAEAAAAPAA4AAgAGAAEAAAAQAA4AAgAGAAEAAAARAA4AAgAGAAEAAAASAA4AAgAGAAEAAAATAA4AAgAGAAEAAAAUAA4AAgAGAAEAAAAVAA4AAgAGAAEAAAAWAA4AAgAGAAEAAAAXAA4AAgAGAAEAAAAYAA4AAgAGAAEAAAAZAA4AAgAGAAEAAAAaAA4AAgAHAAEAAAAaAA0AAgAHAAAAAAAaAAwAAgAHAAAAAAAaAAsAAgAHAAAAAAAaAAoAAgAHAAAAAAAaAAkAAgAHAAAAAAAaAAgAAgAHAAAAAAAaAAcAAgAHAAAAAAAaAAYAAgAHAAAAAAAaAAUAAgAHAAAAAAAaAAIAAgAHAAAAAAAaAAEAAgAHAAAAAAAaAAAAAgAHAAEAAAAZAAAAAgADAAEAAAAYAAAAAgADAAEAAAAXAAAAAgADAAEAAAAWAAAAAgADAAEAAAAVAAAAAgADAAEAAAAUAAAAAgADAAEAAAATAAAAAgADAAEAAAASAAAAAgADAAEAAAARAAAAAgADAAEAAAAQAAAAAgADAAEAAAAPAAAAAgADAAEAAAAOAAAAAgADAAEAAAANAAAAAgADAAEAAAAMAAAAAgADAAEAAAALAAAAAgADAAEAAAAKAAAAAgADAAEAAAAJAAAAAgADAAEAAAAIAAAAAgADAAEAAAAHAAAAAgADAAEAAAAGAAAAAgADAAEAAAAFAAAAAgADAAEAAAAEAAAAAgADAAEAAAADAAAAAgADAAEAAAACAAAAAgADAAEAAAABAAAAAgADAAEAAAAAAAAAAgAHAAEAAAAAAAEAAgAFAAEAAAAAAAIAAgAFAAEAAAAAAAMAAgAFAAEAAAAAAAQAAgAFAAEAAAAAAAUAAgAFAAEAAAAAAAYAAgAFAAEAAAAAAAcAAgAFAAEAAAAAAAgAAgAFAAEAAAAAAAkAAgAFAAEAAAAAAAoAAgAFAAEAAAAAAAsAAgAFAAEAAAAAAAwAAgAFAAEAAAAAAA0AAgAFAAEAAAAaAAMAAgAHAAAAAAAaAAQAAgAHAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAA4AAgAHAAEAAAABAA4AAgAGAAEAAAACAA4AAgAGAAEAAAADAA4AAgAGAAEAAAAEAA4AAgAGAAEAAAAFAA4AAgAGAAEAAAAGAA4AAgAGAAEAAAAHAA4AAgAGAAEAAAAIAA4AAgAGAAEAAAAJAA4AAgAGAAEAAAAKAA4AAgAGAAEAAAALAA4AAgAGAAEAAAAMAA4AAgAGAAEAAAANAA4AAgAGAAEAAAAOAA4AAgAGAAEAAAAPAA4AAgAGAAEAAAAQAA4AAgAGAAEAAAARAA4AAgAGAAEAAAASAA4AAgAGAAEAAAATAA4AAgAGAAEAAAAUAA4AAgAGAAEAAAAVAA4AAgAGAAEAAAAWAA4AAgAGAAEAAAAXAA4AAgAGAAEAAAAYAA4AAgAGAAEAAAAZAA4AAgAGAAEAAAAaAA4AAgAHAAEAAAAaAA0AAgAHAAAAAAAaAAwAAgAHAAAAAAAaAAsAAgAHAAAAAAAaAAoAAgAHAAAAAAAaAAkAAgAHAAAAAAAaAAgAAgAHAAAAAAAaAAcAAgAHAAAAAAAaAAYAAgAHAAAAAAAaAAUAAgAHAAAAAAAaAAIAAgAHAAAAAAAaAAEAAgAHAAAAAAAaAAAAAgAHAAEAAAAZAAAAAgADAAEAAAAYAAAAAgADAAEAAAAXAAAAAgADAAEAAAAWAAAAAgADAAEAAAAVAAAAAgADAAEAAAAUAAAAAgADAAEAAAATAAAAAgADAAEAAAASAAAAAgADAAEAAAARAAAAAgADAAEAAAAQAAAAAgADAAEAAAAPAAAAAgADAAEAAAAOAAAAAgADAAEAAAANAAAAAgADAAEAAAAMAAAAAgADAAEAAAALAAAAAgADAAEAAAAKAAAAAgADAAEAAAAJAAAAAgADAAEAAAAIAAAAAgADAAEAAAAHAAAAAgADAAEAAAAGAAAAAgADAAEAAAAFAAAAAgADAAEAAAAEAAAAAgADAAEAAAADAAAAAgADAAEAAAACAAAAAgADAAEAAAABAAAAAgADAAEAAAAAAAAAAgAHAAEAAAAAAAEAAgAFAAEAAAAAAAIAAgAFAAEAAAAAAAMAAgAFAAEAAAAAAAQAAgAFAAEAAAAAAAUAAgAFAAEAAAAAAAYAAgAFAAEAAAAAAAcAAgAFAAEAAAAAAAgAAgAHAAEAAAAAAAkAAgAFAAEAAAAAAAoAAgAFAAEAAAAAAAsAAgAFAAEAAAAAAAwAAgAFAAEAAAAAAA0AAgAFAAEAAAAaAAMAAgAHAAAAAAAaAAQAAgAHAAAAAAATAAgAAgACAAEAAAASAAgAAgACAAEAAAARAAgAAgACAAEAAAAQAAgAAgACAAEAAAAPAAgAAgACAAEAAAAOAAgAAgACAAEAAAANAAgAAgACAAEAAAAMAAgAAgACAAEAAAALAAgAAgACAAEAAAAKAAgAAgACAAEAAAAJAAgAAgACAAEAAAAIAAgAAgACAAEAAAAHAAgAAgACAAEAAAAGAAgAAgACAAEAAAAFAAgAAgACAAEAAAAEAAgAAgACAAEAAAADAAgAAgACAAEAAAACAAgAAgACAAEAAAABAAgAAgACAAEAAAAUAAgAAgACAAEAAAAVAAgAAgAAAAEAAAA=")
 tile_set = SubResource("TileSet_3bnw3")
 
 [node name="Player" parent="." unique_id=811557842 instance=ExtResource("5_q0wsq")]
-position = Vector2(108, 631)
+position = Vector2(91, 614)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=810611094]
 
+[node name="Goal" parent="." unique_id=408673852 instance=ExtResource("6_2ii7u")]
+position = Vector2(210, 322)
+
 [node name="Hazards" type="Node2D" parent="." unique_id=203578375]
 
-[node name="VictoryScreen" parent="." unique_id=482974796 instance=ExtResource("6_hq5i0")]
+[node name="Spikes19" parent="." unique_id=1617340846 instance=ExtResource("7_aj8n2")]
+position = Vector2(552, 648)
+scale = Vector2(2, 2)
+
+[node name="Spikes20" parent="." unique_id=1469140599 instance=ExtResource("7_aj8n2")]
+position = Vector2(600, 648)
+scale = Vector2(2, 2)
+
+[node name="Spikes21" parent="." unique_id=344015750 instance=ExtResource("7_aj8n2")]
+position = Vector2(648, 648)
+scale = Vector2(2, 2)
+
+[node name="Spikes22" parent="." unique_id=1986911247 instance=ExtResource("7_aj8n2")]
+position = Vector2(696, 648)
+scale = Vector2(2, 2)
+
+[node name="Spikes23" parent="." unique_id=2033203813 instance=ExtResource("7_aj8n2")]
+position = Vector2(504, 648)
+scale = Vector2(2, 2)
+
+[node name="Spikes24" parent="." unique_id=1309039441 instance=ExtResource("7_aj8n2")]
+position = Vector2(360, 648)
+scale = Vector2(2, 2)
+
+[node name="Spikes25" parent="." unique_id=519901130 instance=ExtResource("7_aj8n2")]
+position = Vector2(408, 648)
+scale = Vector2(2, 2)
+
+[node name="Spikes26" parent="." unique_id=735486112 instance=ExtResource("7_aj8n2")]
+position = Vector2(456, 648)
+scale = Vector2(2, 2)
+
+[node name="Spikes27" parent="." unique_id=378741681 instance=ExtResource("7_aj8n2")]
+position = Vector2(936, 648)
+scale = Vector2(2, 2)
+
+[node name="Spikes31" parent="." unique_id=1680291404 instance=ExtResource("7_aj8n2")]
+position = Vector2(888, 648)
+scale = Vector2(2, 2)
+
+[node name="Spikes32" parent="." unique_id=1877652908 instance=ExtResource("7_aj8n2")]
+position = Vector2(744, 648)
+scale = Vector2(2, 2)
+
+[node name="Spikes33" parent="." unique_id=1795708741 instance=ExtResource("7_aj8n2")]
+position = Vector2(792, 648)
+scale = Vector2(2, 2)
+
+[node name="Spikes34" parent="." unique_id=1580213944 instance=ExtResource("7_aj8n2")]
+position = Vector2(840, 648)
+scale = Vector2(2, 2)
+
+[node name="DashPowerup3" parent="." unique_id=248582625 instance=ExtResource("8_yd7i6")]
+position = Vector2(411, 564)
+
+[node name="DashPowerup4" parent="." unique_id=1183841290 instance=ExtResource("8_yd7i6")]
+position = Vector2(616, 564)
+
+[node name="DashPowerup6" parent="." unique_id=287137561 instance=ExtResource("8_yd7i6")]
+position = Vector2(821, 564)
+
+[node name="Spikes28" parent="." unique_id=1296369615 instance=ExtResource("7_aj8n2")]
+position = Vector2(552, 361)
+scale = Vector2(2, 2)
+
+[node name="Spikes29" parent="." unique_id=1681333897 instance=ExtResource("7_aj8n2")]
+position = Vector2(600, 361)
+scale = Vector2(2, 2)
+
+[node name="Spikes30" parent="." unique_id=185546436 instance=ExtResource("7_aj8n2")]
+position = Vector2(648, 361)
+scale = Vector2(2, 2)
+
+[node name="Spikes35" parent="." unique_id=1319178081 instance=ExtResource("7_aj8n2")]
+position = Vector2(696, 361)
+scale = Vector2(2, 2)
+
+[node name="Spikes36" parent="." unique_id=1399734054 instance=ExtResource("7_aj8n2")]
+position = Vector2(504, 361)
+scale = Vector2(2, 2)
+
+[node name="Spikes37" parent="." unique_id=2060455648 instance=ExtResource("7_aj8n2")]
+position = Vector2(360, 361)
+scale = Vector2(2, 2)
+
+[node name="Spikes38" parent="." unique_id=1385275486 instance=ExtResource("7_aj8n2")]
+position = Vector2(408, 361)
+scale = Vector2(2, 2)
+
+[node name="Spikes39" parent="." unique_id=578160403 instance=ExtResource("7_aj8n2")]
+position = Vector2(456, 361)
+scale = Vector2(2, 2)
+
+[node name="Spikes40" parent="." unique_id=1127722860 instance=ExtResource("7_aj8n2")]
+position = Vector2(936, 361)
+scale = Vector2(2, 2)
+
+[node name="Spikes41" parent="." unique_id=1324073634 instance=ExtResource("7_aj8n2")]
+position = Vector2(888, 361)
+scale = Vector2(2, 2)
+
+[node name="Spikes42" parent="." unique_id=652533657 instance=ExtResource("7_aj8n2")]
+position = Vector2(744, 361)
+scale = Vector2(2, 2)
+
+[node name="Spikes43" parent="." unique_id=270341435 instance=ExtResource("7_aj8n2")]
+position = Vector2(792, 361)
+scale = Vector2(2, 2)
+
+[node name="Spikes44" parent="." unique_id=1067173082 instance=ExtResource("7_aj8n2")]
+position = Vector2(840, 361)
+scale = Vector2(2, 2)
+
+[node name="DashPowerup5" parent="." unique_id=1755453582 instance=ExtResource("8_yd7i6")]
+position = Vector2(478, 277)
+
+[node name="DashPowerup7" parent="." unique_id=1015626489 instance=ExtResource("8_yd7i6")]
+position = Vector2(683, 277)
+
+[node name="DashPowerup8" parent="." unique_id=1130472708 instance=ExtResource("8_yd7i6")]
+position = Vector2(888, 277)
