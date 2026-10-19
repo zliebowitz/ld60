@@ -135,3 +135,4 @@ curve = SubResource("Curve2D_ts8eg")
 [node name="SlugPath2" parent="." unique_id=1202539976 instance=ExtResource("7_5vn0v")]
 position = Vector2(919, 503)
 curve = SubResource("Curve2D_5vn0v")
+slug_speed = 200.0

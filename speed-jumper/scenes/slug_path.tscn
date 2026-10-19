@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://thg27bil31tc"]
 
 [ext_resource type="Script" uid="uid://cfoa1sjgmy5qa" path="res://scripts/slug_follow.gd" id="1_h8haf"]
+[ext_resource type="Script" uid="uid://c6wxau7fjfddg" path="res://scripts/slug_path.gd" id="1_jupre"]
 [ext_resource type="Texture2D" uid="uid://bflvdh8pg0xca" path="res://assets/images/Slug/Slug.png" id="2_h8haf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rej77"]
@@ -99,6 +100,7 @@ animations = [{
 }]
 
 [node name="SlugPath" type="Path2D" unique_id=1100441175]
+script = ExtResource("1_jupre")
 
 [node name="SlugFollow" type="PathFollow2D" parent="." unique_id=601929188]
 rotates = false
