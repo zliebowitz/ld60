@@ -127,23 +127,23 @@ texture = ExtResource("1_gnb3t")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="SawPath6" parent="." unique_id=1764685549 instance=ExtResource("2_qblg5")]
+[node name="SawPath1" parent="." unique_id=1764685549 instance=ExtResource("2_qblg5")]
 position = Vector2(-323, -119)
 curve = SubResource("Curve2D_p7cwj")
 
-[node name="SawPath7" parent="." unique_id=1403324557 instance=ExtResource("2_qblg5")]
+[node name="SawPath2" parent="." unique_id=1403324557 instance=ExtResource("2_qblg5")]
 position = Vector2(-323, 91)
 curve = SubResource("Curve2D_p7cwj")
 
-[node name="SawPath8" parent="." unique_id=909558647 instance=ExtResource("2_qblg5")]
+[node name="SawPath3" parent="." unique_id=909558647 instance=ExtResource("2_qblg5")]
 position = Vector2(-884, 322)
 curve = SubResource("Curve2D_hkd47")
 
-[node name="SawPath10" parent="." unique_id=1100441175 instance=ExtResource("2_qblg5")]
+[node name="SawPath4" parent="." unique_id=1100441175 instance=ExtResource("2_qblg5")]
 position = Vector2(-722, 130)
 curve = SubResource("Curve2D_hvxp4")
 
-[node name="SawPath9" parent="." unique_id=838476164 instance=ExtResource("2_qblg5")]
+[node name="SawPath5" parent="." unique_id=838476164 instance=ExtResource("2_qblg5")]
 position = Vector2(160, 71)
 curve = SubResource("Curve2D_5db3f")
 
