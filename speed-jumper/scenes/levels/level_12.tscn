@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cl24fj0ishp54" path="res://scenes/player.tscn" id="5_q0wsq"]
 [ext_resource type="PackedScene" uid="uid://dsi7gh1cot5u0" path="res://scenes/goal.tscn" id="6_2ii7u"]
 [ext_resource type="PackedScene" uid="uid://ityv0ihqnxo8" path="res://scenes/spikes.tscn" id="7_aj8n2"]
+[ext_resource type="PackedScene" uid="uid://thg27bil31tc" path="res://scenes/slug_path.tscn" id="7_vcewm"]
 [ext_resource type="PackedScene" uid="uid://b5t8kw7pjejmv" path="res://scenes/powers/dash_powerup.tscn" id="8_yd7i6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dga24"]
@@ -91,6 +92,12 @@ sources/0 = SubResource("TileSetAtlasSource_dga24")
 sources/1 = SubResource("TileSetAtlasSource_qxy0u")
 sources/2 = SubResource("TileSetAtlasSource_excbq")
 
+[sub_resource type="Curve2D" id="Curve2D_b73n6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -183, 139, 0, 0, 0, 0, 26, 140)
+}
+point_count = 2
+
 [node name="LevelRoot" type="Node2D" unique_id=738171494]
 texture_filter = 1
 
@@ -118,6 +125,10 @@ tile_set = SubResource("TileSet_3bnw3")
 position = Vector2(91, 614)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=810611094]
+
+[node name="SlugPath" parent="Enemies" unique_id=1100441175 instance=ExtResource("7_vcewm")]
+position = Vector2(1187, 506)
+curve = SubResource("Curve2D_b73n6")
 
 [node name="Goal" parent="." unique_id=408673852 instance=ExtResource("6_2ii7u")]
 position = Vector2(210, 322)
