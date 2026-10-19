@@ -4,12 +4,6 @@
 [ext_resource type="Script" uid="uid://dyferiw6wm0f" path="res://scripts/saw_follow.gd" id="1_r153v"]
 [ext_resource type="Texture2D" uid="uid://gt1uv2r807xh" path="res://assets/images/Hazards/Saw.png" id="2_bv3kb"]
 
-[sub_resource type="Curve2D" id="Curve2D_xn7gu"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 947, 302, 0, 0, 0, 0, 789, 300)
-}
-point_count = 2
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_1gcmh"]
 radius = 14.472196
 
@@ -36,11 +30,9 @@ animations = [{
 }]
 
 [node name="SawPath" type="Path2D" unique_id=1100441175]
-curve = SubResource("Curve2D_xn7gu")
 script = ExtResource("1_bv3kb")
 
 [node name="SawFollow" type="PathFollow2D" parent="." unique_id=601929188]
-position = Vector2(947, 302)
 rotates = false
 script = ExtResource("1_r153v")
 

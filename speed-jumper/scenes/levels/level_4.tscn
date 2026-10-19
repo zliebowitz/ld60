@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://bq1q12tar6nud"]
+[gd_scene format=4 uid="uid://52kamx33i2sp"]
 
 [ext_resource type="Texture2D" uid="uid://db0a7eth6u05c" path="res://assets/images/Tilemap/Background0_2.png" id="1_rej77"]
 [ext_resource type="Texture2D" uid="uid://brgrlevuyp4vl" path="res://assets/images/Tilemap/Background1.png" id="2_5vn0v"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://nk1gpkhfot5s" path="res://assets/images/Tilemap/Ground.png" id="4_um320"]
 [ext_resource type="PackedScene" uid="uid://cl24fj0ishp54" path="res://scenes/player.tscn" id="5_glw47"]
 [ext_resource type="PackedScene" uid="uid://dsi7gh1cot5u0" path="res://scenes/goal.tscn" id="6_4wsov"]
+[ext_resource type="PackedScene" uid="uid://thg27bil31tc" path="res://scenes/slug_path.tscn" id="7_5vn0v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dga24"]
 texture = ExtResource("2_5vn0v")
@@ -88,6 +89,18 @@ sources/0 = SubResource("TileSetAtlasSource_dga24")
 sources/1 = SubResource("TileSetAtlasSource_qxy0u")
 sources/2 = SubResource("TileSetAtlasSource_excbq")
 
+[sub_resource type="Curve2D" id="Curve2D_ts8eg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -183, 139, 0, 0, 0, 0, 233, 140)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_5vn0v"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 224, 143, 0, 0, 0, 0, -323, 143)
+}
+point_count = 2
+
 [node name="LevelRoot" type="Node2D" unique_id=738171494]
 texture_filter = 1
 
@@ -114,3 +127,11 @@ position = Vector2(108, 631)
 position = Vector2(1209, 610)
 
 [node name="Hazards" type="Node2D" parent="." unique_id=203578375]
+
+[node name="SlugPath" parent="." unique_id=1100441175 instance=ExtResource("7_5vn0v")]
+position = Vector2(355, 507)
+curve = SubResource("Curve2D_ts8eg")
+
+[node name="SlugPath2" parent="." unique_id=1202539976 instance=ExtResource("7_5vn0v")]
+position = Vector2(919, 503)
+curve = SubResource("Curve2D_5vn0v")

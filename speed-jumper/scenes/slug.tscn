@@ -1,7 +1,29 @@
 [gd_scene format=3 uid="uid://dj1mgc82agdsw"]
 
-[ext_resource type="Script" uid="uid://q6g5q4ve60r" path="res://scripts/slug.gd" id="1_1e7bd"]
 [ext_resource type="Texture2D" uid="uid://bflvdh8pg0xca" path="res://assets/images/Slug/Slug.png" id="2_1e7bd"]
+
+[sub_resource type="GDScript" id="GDScript_f4wvi"]
+script/source = "extends Area2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+const SPEED = 100.0
+var direction = -1.0
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	animated_sprite_2d.flip_h = (direction == -1)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	position.x += direction * SPEED * delta
+
+func _on_timer_timeout() -> void:
+	direction *= -1
+	animated_sprite_2d.flip_h = (direction == -1)
+		
+	
+	
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qi5w3"]
 atlas = ExtResource("2_1e7bd")
@@ -92,7 +114,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"walk",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tuyoq"]
@@ -101,7 +123,7 @@ size = Vector2(48, 39)
 [node name="Slug" type="Area2D" unique_id=435138375 groups=["enemy"]]
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_1e7bd")
+script = SubResource("GDScript_f4wvi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1493211413]
 texture_filter = 1
