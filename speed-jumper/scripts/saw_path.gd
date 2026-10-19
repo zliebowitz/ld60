@@ -2,8 +2,11 @@ extends Path2D
 
 @export var track_color := Color(0.30, 0.32, 0.40)
 @export var track_width := 2.0
+@export var saw_speed: float = 60.0
+	
 
 func _ready() -> void:
+	$SawFollow.speed = saw_speed
 	curve = curve.duplicate()
 	var line := Line2D.new()
 	line.points = curve.get_baked_points()

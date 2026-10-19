@@ -138,3 +138,8 @@ scale = Vector2(2, 2)
 [node name="SawPath" parent="." unique_id=1100441175 instance=ExtResource("9_qsp8v")]
 position = Vector2(-192, 330)
 curve = SubResource("Curve2D_3p04p")
+
+[node name="SawPath2" parent="." unique_id=111061084 instance=ExtResource("9_qsp8v")]
+position = Vector2(-196, 162)
+curve = SubResource("Curve2D_3p04p")
+saw_speed = 120.0
