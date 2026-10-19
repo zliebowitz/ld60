@@ -11,8 +11,8 @@ signal died
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -600.0
-const DASH_SPEED = 900.0    
-const DASH_TIME = 0.15       
+const DASH_SPEED = 450.0    
+const DASH_TIME = 0.3       
 const DASH_COOLDOWN = 0.4   
  
 var alive = true
@@ -58,16 +58,16 @@ func _physics_process(delta: float) -> void:
 			velocity.x = clampf(velocity.x, -SPEED, SPEED)
 		return
 	
-	# Add animation
-	if velocity.x > 0 or velocity.x < 0:
-		animated_sprite_2d.animation = "run"
-	else:
-		animated_sprite_2d.animation = "idle"
-	
-	# Add the gravity.
-	if not is_on_floor():
+	# Add animation & gravity
+	if is_on_floor():
+		if velocity.x > 0 or velocity.x < 0:
+			animated_sprite_2d.animation = "run"
+		else:
+			animated_sprite_2d.animation = "idle"
+	elif not is_on_floor():
 		velocity += get_gravity() * delta
-		animated_sprite_2d.animation = "jump"
+		if animated_sprite_2d.animation != "double_jump":
+			animated_sprite_2d.animation = "jump"
 
 	if can_move:
 		# Handle jump.
@@ -76,6 +76,7 @@ func _physics_process(delta: float) -> void:
 				velocity.y = JUMP_VELOCITY
 				jump_sound.play()
 			elif GameState.power == Power.Type.DOUBLE_JUMP:
+				animated_sprite_2d.animation = "double_jump"
 				dash_double_jump_sound.play()
 				velocity.y = JUMP_VELOCITY
 				jump_sound.play()
