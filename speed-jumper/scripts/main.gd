@@ -1,4 +1,5 @@
 extends Node2D
+@onready var goal_sound: AudioStreamPlayer2D = $GoalSound
 
 var level = 1
 var current_level_root: Node = null
@@ -51,7 +52,7 @@ func _setup_level(level_root: Node) -> void:
 func _on_goal_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		body.can_move = false
-		print("Goal")
+		goal_sound.play()
 		var goal = current_level_root.get_node_or_null("Goal")
 		goal.goal_reached()
 		
