@@ -136,7 +136,7 @@ position = Vector2(999, 647)
 position = Vector2(977, 118)
 
 [node name="Goal" parent="." unique_id=408673852 instance=ExtResource("7_josfm")]
-position = Vector2(1210, 612)
+position = Vector2(1209, 610)
 
 [node name="Hazards" type="Node2D" parent="." unique_id=203578375]
 
