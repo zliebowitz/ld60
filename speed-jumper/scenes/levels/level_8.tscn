@@ -1,14 +1,59 @@
-[gd_scene format=4 uid="uid://cjreq154ket7"]
+[gd_scene format=4 uid="uid://b0myhoa2ecgxq"]
 
-[ext_resource type="Texture2D" uid="uid://db0a7eth6u05c" path="res://assets/images/Tilemap/Background0_2.png" id="1_hq5i0"]
-[ext_resource type="Texture2D" uid="uid://brgrlevuyp4vl" path="res://assets/images/Tilemap/Background1.png" id="2_u1w5x"]
-[ext_resource type="Texture2D" uid="uid://r6n3igy4aqj4" path="res://assets/images/Tilemap/Background2.png" id="3_posk4"]
-[ext_resource type="Texture2D" uid="uid://nk1gpkhfot5s" path="res://assets/images/Tilemap/Ground.png" id="4_sjq8i"]
-[ext_resource type="PackedScene" uid="uid://cl24fj0ishp54" path="res://scenes/player.tscn" id="5_q0wsq"]
-[ext_resource type="PackedScene" uid="uid://suspjdfi40eo" path="res://scenes/victory_screen.tscn" id="6_hq5i0"]
+[ext_resource type="Texture2D" uid="uid://db0a7eth6u05c" path="res://assets/images/Tilemap/Background0_2.png" id="1_7snfr"]
+[ext_resource type="Texture2D" uid="uid://brgrlevuyp4vl" path="res://assets/images/Tilemap/Background1.png" id="2_ene4w"]
+[ext_resource type="PackedScene" uid="uid://thg27bil31tc" path="res://scenes/slug_path.tscn" id="2_w2i51"]
+[ext_resource type="Texture2D" uid="uid://r6n3igy4aqj4" path="res://assets/images/Tilemap/Background2.png" id="3_h6r4t"]
+[ext_resource type="Texture2D" uid="uid://nk1gpkhfot5s" path="res://assets/images/Tilemap/Ground.png" id="4_w2i51"]
+[ext_resource type="PackedScene" uid="uid://bok32f413dc5m" path="res://scenes/powers/double_jump_powerup.tscn" id="4_xsrpe"]
+[ext_resource type="PackedScene" uid="uid://cl24fj0ishp54" path="res://scenes/player.tscn" id="5_xsrpe"]
+[ext_resource type="PackedScene" uid="uid://dsi7gh1cot5u0" path="res://scenes/goal.tscn" id="6_0kxia"]
+[ext_resource type="PackedScene" uid="uid://j432xia6yudj" path="res://scenes/saw_path.tscn" id="7_ene4w"]
+
+[sub_resource type="Curve2D" id="Curve2D_0kxia"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -183, 139, 0, 0, 0, 0, 233, 140)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_h6r4t"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 947, 302, 0, 0, 0, 0, 591, 301)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_5umh1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 947, 302, 0, 0, 0, 0, 591, 301)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_w2i51"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 947, 302, 0, 0, 0, 0, 947, 117)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_xsrpe"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 947, 302, 0, 0, 0, 0, 947, 117)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_vsqe1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 947, 302, 0, 0, 0, 0, 707, 303)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_v7ucw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 947, 302, 0, 0, 0, 0, 1295, 305)
+}
+point_count = 2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dga24"]
-texture = ExtResource("2_u1w5x")
+texture = ExtResource("2_ene4w")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -27,7 +72,7 @@ texture = ExtResource("2_u1w5x")
 7:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxy0u"]
-texture = ExtResource("3_posk4")
+texture = ExtResource("3_h6r4t")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -46,7 +91,7 @@ texture = ExtResource("3_posk4")
 7:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_excbq"]
-texture = ExtResource("4_sjq8i")
+texture = ExtResource("4_w2i51")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -95,21 +140,56 @@ texture_filter = 1
 texture_filter = 1
 offset_right = 1295.0
 offset_bottom = 720.0
-texture = ExtResource("1_hq5i0")
+texture = ExtResource("1_7snfr")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Enemies" type="Node2D" parent="." unique_id=810611094]
+
+[node name="SlugPath" parent="Enemies" unique_id=1100441175 instance=ExtResource("2_w2i51")]
+position = Vector2(583, 26)
+curve = SubResource("Curve2D_0kxia")
+
+[node name="Hazards" type="Node2D" parent="." unique_id=203578375]
+
+[node name="SawPath1" parent="Hazards" unique_id=361940125 instance=ExtResource("7_ene4w")]
+position = Vector2(-165, 364)
+curve = SubResource("Curve2D_h6r4t")
+
+[node name="SawPath2" parent="Hazards" unique_id=1666512621 instance=ExtResource("7_ene4w")]
+position = Vector2(106, 124)
+curve = SubResource("Curve2D_5umh1")
+
+[node name="SawPath4" parent="Hazards" unique_id=331242976 instance=ExtResource("7_ene4w")]
+position = Vector2(253, 133)
+curve = SubResource("Curve2D_w2i51")
+
+[node name="SawPath6" parent="Hazards" unique_id=1584605792 instance=ExtResource("7_ene4w")]
+position = Vector2(-851, -68)
+curve = SubResource("Curve2D_xsrpe")
+
+[node name="SawPath5" parent="Hazards" unique_id=1349758957 instance=ExtResource("7_ene4w")]
+position = Vector2(-300, -14)
+curve = SubResource("Curve2D_vsqe1")
+
+[node name="SawPath3" parent="Hazards" unique_id=726048910 instance=ExtResource("7_ene4w")]
+position = Vector2(-844, 124)
+curve = SubResource("Curve2D_v7ucw")
+
+[node name="DoubleJumpPowerup1" parent="." unique_id=1526352414 instance=ExtResource("4_xsrpe")]
+position = Vector2(1176, 541)
+
+[node name="DoubleJumpPowerup2" parent="." unique_id=2013977318 instance=ExtResource("4_xsrpe")]
+position = Vector2(116, 292)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1030501912]
 texture_filter = 1
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAAAAA4AAgAHAAEAAAABAA4AAgAGAAEAAAACAA4AAgAGAAEAAAADAA4AAgAGAAEAAAAEAA4AAgAGAAEAAAAFAA4AAgAGAAEAAAAGAA4AAgAGAAEAAAAHAA4AAgAGAAEAAAAIAA4AAgAGAAEAAAAJAA4AAgAGAAEAAAAKAA4AAgAGAAEAAAALAA4AAgAGAAEAAAAMAA4AAgAGAAEAAAANAA4AAgAGAAEAAAAOAA4AAgAGAAEAAAAPAA4AAgAGAAEAAAAQAA4AAgAGAAEAAAARAA4AAgAGAAEAAAASAA4AAgAGAAEAAAATAA4AAgAGAAEAAAAUAA4AAgAGAAEAAAAVAA4AAgAGAAEAAAAWAA4AAgAGAAEAAAAXAA4AAgAGAAEAAAAYAA4AAgAGAAEAAAAZAA4AAgAGAAEAAAAaAA4AAgAHAAEAAAAaAA0AAgAHAAAAAAAaAAwAAgAHAAAAAAAaAAsAAgAHAAAAAAAaAAoAAgAHAAAAAAAaAAkAAgAHAAAAAAAaAAgAAgAHAAAAAAAaAAcAAgAHAAAAAAAaAAYAAgAHAAAAAAAaAAUAAgAHAAAAAAAaAAIAAgAHAAAAAAAaAAEAAgAHAAAAAAAaAAAAAgAHAAEAAAAZAAAAAgADAAEAAAAYAAAAAgADAAEAAAAXAAAAAgADAAEAAAAWAAAAAgADAAEAAAAVAAAAAgADAAEAAAAUAAAAAgADAAEAAAATAAAAAgADAAEAAAASAAAAAgADAAEAAAARAAAAAgADAAEAAAAQAAAAAgADAAEAAAAPAAAAAgADAAEAAAAOAAAAAgADAAEAAAANAAAAAgADAAEAAAAMAAAAAgADAAEAAAALAAAAAgADAAEAAAAKAAAAAgADAAEAAAAJAAAAAgADAAEAAAAIAAAAAgADAAEAAAAHAAAAAgADAAEAAAAGAAAAAgADAAEAAAAFAAAAAgADAAEAAAAEAAAAAgADAAEAAAADAAAAAgADAAEAAAACAAAAAgADAAEAAAABAAAAAgADAAEAAAAAAAAAAgAHAAEAAAAAAAEAAgAFAAEAAAAAAAIAAgAFAAEAAAAAAAMAAgAFAAEAAAAAAAQAAgAFAAEAAAAAAAUAAgAFAAEAAAAAAAYAAgAFAAEAAAAAAAcAAgAFAAEAAAAAAAgAAgAFAAEAAAAAAAkAAgAFAAEAAAAAAAoAAgAFAAEAAAAAAAsAAgAFAAEAAAAAAAwAAgAFAAEAAAAAAA0AAgAFAAEAAAAaAAMAAgAHAAAAAAAaAAQAAgAHAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAA4AAgAHAAEAAAABAA4AAgAGAAEAAAACAA4AAgAGAAEAAAADAA4AAgAGAAEAAAAEAA4AAgAGAAEAAAAFAA4AAgAGAAEAAAAGAA4AAgAGAAEAAAAHAA4AAgAGAAEAAAAIAA4AAgAGAAEAAAAJAA4AAgAGAAEAAAAKAA4AAgAGAAEAAAALAA4AAgAGAAEAAAAMAA4AAgAGAAEAAAANAA4AAgAGAAEAAAAOAA4AAgAGAAEAAAAPAA4AAgAGAAEAAAAQAA4AAgAGAAEAAAARAA4AAgAGAAEAAAASAA4AAgAGAAEAAAATAA4AAgAGAAEAAAAUAA4AAgAGAAEAAAAVAA4AAgAGAAEAAAAWAA4AAgAGAAEAAAAXAA4AAgAGAAEAAAAYAA4AAgAGAAEAAAAZAA4AAgAGAAEAAAAaAA4AAgAHAAEAAAAaAA0AAgAHAAAAAAAaAAwAAgAHAAAAAAAaAAsAAgAHAAAAAAAaAAoAAgAHAAAAAAAaAAkAAgAHAAAAAAAaAAgAAgAHAAAAAAAaAAcAAgAHAAAAAAAaAAYAAgAHAAAAAAAaAAUAAgAHAAAAAAAaAAIAAgAHAAAAAAAaAAEAAgAHAAAAAAAaAAAAAgAHAAEAAAAZAAAAAgADAAEAAAAYAAAAAgADAAEAAAAXAAAAAgADAAEAAAAWAAAAAgADAAEAAAAVAAAAAgADAAEAAAAUAAAAAgADAAEAAAATAAAAAgADAAEAAAASAAAAAgADAAEAAAARAAAAAgADAAEAAAAQAAAAAgADAAEAAAAPAAAAAgADAAEAAAAOAAAAAgADAAEAAAANAAAAAgADAAEAAAAMAAAAAgADAAEAAAALAAAAAgADAAEAAAAKAAAAAgADAAEAAAAJAAAAAgADAAEAAAAIAAAAAgADAAEAAAAHAAAAAgADAAEAAAAGAAAAAgADAAEAAAAFAAAAAgADAAEAAAAEAAAAAgADAAEAAAADAAAAAgADAAEAAAACAAAAAgADAAEAAAABAAAAAgADAAEAAAAAAAAAAgAHAAEAAAAAAAEAAgAFAAEAAAAAAAIAAgAFAAEAAAAAAAMAAgAFAAEAAAAAAAQAAgAFAAEAAAAAAAUAAgAFAAEAAAAAAAYAAgAFAAEAAAAAAAcAAgAFAAEAAAAAAAgAAgAFAAEAAAAAAAkAAgAHAAEAAAAAAAoAAgAHAAEAAAAAAAsAAgAFAAEAAAAAAAwAAgAFAAEAAAAAAA0AAgAFAAEAAAAaAAMAAgAHAAAAAAAaAAQAAgAHAAAAAAABAAoAAgADAAEAAAACAAoAAgADAAEAAAADAAoAAgADAAEAAAAEAAoAAgADAAEAAAAFAAoAAgADAAEAAAAGAAoAAgADAAEAAAAHAAoAAgADAAEAAAAIAAoAAgADAAEAAAAJAAoAAgADAAEAAAAOAAoAAgADAAAAAAAPAAoAAgADAAEAAAAQAAoAAgADAAEAAAARAAoAAgADAAEAAAASAAoAAgADAAEAAAATAAoAAgADAAEAAAAUAAoAAgADAAEAAAAVAAoAAgADAAEAAAAWAAoAAgABAAEAAAAWAAkAAgAEAAEAAAAVAAkAAgAGAAEAAAAUAAkAAgAGAAEAAAATAAkAAgAGAAEAAAASAAkAAgAGAAEAAAARAAkAAgAGAAEAAAAQAAkAAgAGAAEAAAAPAAkAAgAGAAEAAAAOAAkAAgAGAAEAAAANAAkAAgACAAEAAAAMAAkAAgACAAEAAAALAAkAAgACAAEAAAAKAAkAAgAGAAEAAAAJAAkAAgAGAAEAAAAIAAkAAgAGAAEAAAAHAAkAAgAGAAEAAAAGAAkAAgAGAAEAAAAFAAkAAgAGAAEAAAAEAAkAAgAGAAEAAAADAAkAAgAGAAEAAAACAAkAAgAGAAEAAAABAAkAAgAGAAEAAAAKAAoAAgABAAEAAAAWAAQAAgACAAEAAAAXAAQAAgACAAEAAAAYAAQAAgACAAEAAAAZAAQAAgACAAEAAAAVAAQAAgACAAEAAAAUAAQAAgACAAEAAAATAAQAAgACAAEAAAASAAQAAgACAAEAAAARAAQAAgACAAEAAAAQAAQAAgACAAEAAAAPAAQAAgACAAEAAAAOAAQAAgACAAEAAAANAAQAAgAGAAEAAAANAAUAAgABAAEAAAAMAAQAAgAGAAEAAAALAAQAAgAGAAEAAAAKAAQAAgAGAAEAAAAJAAQAAgAGAAEAAAAIAAQAAgAGAAEAAAAHAAQAAgACAAEAAAAGAAQAAgACAAEAAAAFAAQAAgACAAEAAAAEAAQAAgACAAAAAAAMAAUAAgADAAEAAAALAAUAAgADAAEAAAAKAAUAAgADAAEAAAAJAAUAAgADAAEAAAAIAAUAAgADAAAAAAA=")
 tile_set = SubResource("TileSet_3bnw3")
 
-[node name="Player" parent="." unique_id=811557842 instance=ExtResource("5_q0wsq")]
+[node name="Player" parent="." unique_id=811557842 instance=ExtResource("5_xsrpe")]
 position = Vector2(108, 631)
 
-[node name="Enemies" type="Node2D" parent="." unique_id=810611094]
-
-[node name="Hazards" type="Node2D" parent="." unique_id=203578375]
-
-[node name="VictoryScreen" parent="." unique_id=482974796 instance=ExtResource("6_hq5i0")]
+[node name="Goal" parent="." unique_id=408673852 instance=ExtResource("6_0kxia")]
+position = Vector2(1148, 130)
