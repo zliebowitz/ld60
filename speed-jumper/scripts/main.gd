@@ -18,7 +18,8 @@ func _process(_delta: float) -> void:
 		if player:
 			restarting = true
 			player.can_move = false
-			call_deferred("_load_level",1)
+			level = 1
+			call_deferred("_load_level",level)
 		
 
 
