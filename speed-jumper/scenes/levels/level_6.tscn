@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dsi7gh1cot5u0" path="res://scenes/goal.tscn" id="7_josfm"]
 [ext_resource type="PackedScene" uid="uid://ityv0ihqnxo8" path="res://scenes/spikes.tscn" id="8_lgrx1"]
 [ext_resource type="PackedScene" uid="uid://j432xia6yudj" path="res://scenes/saw_path.tscn" id="9_fhpes"]
+[ext_resource type="PackedScene" uid="uid://b5t8kw7pjejmv" path="res://scenes/powers/dash_powerup.tscn" id="10_kydov"]
+[ext_resource type="PackedScene" uid="uid://bok32f413dc5m" path="res://scenes/powers/double_jump_powerup.tscn" id="11_uwlxl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dga24"]
 texture = ExtResource("2_n6eey")
@@ -93,13 +95,13 @@ sources/2 = SubResource("TileSetAtlasSource_excbq")
 
 [sub_resource type="Curve2D" id="Curve2D_dga24"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 924, 262, 0, 0, 0, 0, 830, 511)
+"points": PackedVector2Array(0, 0, 0, 0, 924, 262, 0, 0, 0, 0, 828, 503)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_qxy0u"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 947, 302, 0, 0, 0, 0, 953, 475)
+"points": PackedVector2Array(0, 0, 0, 0, 952, 222, 0, 0, 0, 0, 953, 475)
 }
 point_count = 2
 
@@ -121,7 +123,7 @@ tile_map_data = PackedByteArray("AAAAAA4AAgAHAAEAAAABAA4AAgAHAAEAAAACAA4AAgAHAAE
 tile_set = SubResource("TileSet_3bnw3")
 
 [node name="Player" parent="." unique_id=811557842 instance=ExtResource("5_t4txi")]
-position = Vector2(131, 419)
+position = Vector2(87, 487)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=810611094]
 
@@ -146,7 +148,15 @@ scale = Vector2(2, 2)
 [node name="SawPath" parent="." unique_id=1100441175 instance=ExtResource("9_fhpes")]
 position = Vector2(-82, 91)
 curve = SubResource("Curve2D_dga24")
+saw_speed = 240.0
 
 [node name="SawPath2" parent="." unique_id=1700692768 instance=ExtResource("9_fhpes")]
 position = Vector2(127, 174)
 curve = SubResource("Curve2D_qxy0u")
+saw_speed = 240.0
+
+[node name="DashPowerup" parent="." unique_id=1526352414 instance=ExtResource("10_kydov")]
+position = Vector2(574, 140)
+
+[node name="DoubleJumpPowerup" parent="." unique_id=1827072988 instance=ExtResource("11_uwlxl")]
+position = Vector2(159, 482)
