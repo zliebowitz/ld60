@@ -2,7 +2,6 @@ extends CanvasLayer
 
 @onready var label: Label = $Label
 
-
 func _ready() -> void:
 	layer = 100
 	GameState.stop_timer()

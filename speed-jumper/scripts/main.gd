@@ -1,5 +1,7 @@
 extends Node2D
 @onready var goal_sound: AudioStreamPlayer2D = $GoalSound
+@onready var bgm: AudioStreamPlayer2D = $BGM
+@onready var victory_bgm: AudioStreamPlayer2D = $VictoryBGM
 
 var level = 1
 var current_level_root: Node = null
@@ -47,6 +49,16 @@ func _setup_level(level_root: Node) -> void:
 	if goal:
 		goal.body_entered.connect(_on_goal_body_entered)
 		goal.goal_complete.connect(_on_goal_complete)
+		
+	var victory = level_root.get_node_or_null("VictoryScreen")
+	if victory:
+		print("Victory")
+		bgm.stop()
+		victory_bgm.play()
+	else:
+		if not bgm.playing:
+			victory_bgm.stop()
+			bgm.play()
 				
 				
 # SIGNAL HANDLERS
@@ -58,7 +70,6 @@ func _on_goal_body_entered(body: Node2D) -> void:
 		goal.goal_reached()
 		
 		
-
 func _on_goal_complete() -> void:
 	level += 1
 	call_deferred("_load_level",level)
@@ -66,5 +77,4 @@ func _on_goal_complete() -> void:
 
 func _on_player_died() -> void:
 	print("Player Died")
-	
 	call_deferred("_load_level",level)
